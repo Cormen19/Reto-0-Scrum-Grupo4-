@@ -26,6 +26,8 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Inicio extends JFrame {
 
@@ -87,6 +89,10 @@ public class Inicio extends JFrame {
 		Login.add(passwordField, "cell 2 2,growx");
 		
 		JButton bntConfirmar = new JButton("Confirmar");
+		bntConfirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		Login.add(bntConfirmar, "cell 4 4");
 		
 		JPanel Registro = new JPanel();
