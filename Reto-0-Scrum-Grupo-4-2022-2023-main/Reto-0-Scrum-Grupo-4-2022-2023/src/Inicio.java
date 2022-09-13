@@ -18,6 +18,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JComboBox;
+import javax.swing.JButton;
 
 public class Inicio extends JFrame {
 
@@ -59,7 +60,7 @@ public class Inicio extends JFrame {
 		
 		JPanel Login = new JPanel();
 		entrada.addTab("Login", null, Login, null);
-		Login.setLayout(new MigLayout("", "[grow][right][grow,left][grow]", "[grow][][][grow][]"));
+		Login.setLayout(new MigLayout("", "[grow][right][grow,left][grow][]", "[grow][][][grow][]"));
 		
 		JLabel NombreUsuario = new JLabel("Usuario:");
 		Login.add(NombreUsuario, "cell 1 1,alignx trailing");
@@ -73,6 +74,9 @@ public class Inicio extends JFrame {
 		
 		passwordField = new JPasswordField();
 		Login.add(passwordField, "cell 2 2,growx");
+		
+		JButton bntConfirmar = new JButton("Confirmar");
+		Login.add(bntConfirmar, "cell 4 4");
 		
 		JPanel Registro = new JPanel();
 		entrada.addTab("Registro", null, Registro, null);
