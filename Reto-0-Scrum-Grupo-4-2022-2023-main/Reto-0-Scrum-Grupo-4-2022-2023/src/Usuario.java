@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Usuario {
 
 	
-	private String usuario;
+	private String idUsuario;
 
 	private String contraseña;
 
@@ -23,7 +23,7 @@ public class Usuario {
 
 	
 	public Usuario() {
-		this.usuario = "";
+		this.idUsuario = "";
 		this.contraseña = "";
 		this.nombre = "";
 		this.apellidos = "";
@@ -31,9 +31,9 @@ public class Usuario {
 	}
 
 
-	public Usuario(String usuario, String contraseña, String nombre, String apellidos,
+	public Usuario(String idUsuario, String contraseña, String nombre, String apellidos,
 			Permisos funcion) {
-		this.usuario = usuario;
+		this.idUsuario = idUsuario;
 		this.contraseña = contraseña;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -42,13 +42,13 @@ public class Usuario {
 	}
 
 
-	public String getUsuario() {
-		return usuario;
+	public String getIdUsuario() {
+		return idUsuario;
 	}
 
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setIdUsuario(String idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public String getContraseña() {
@@ -91,7 +91,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return usuario + ";" + contraseña + ";" + nombre + ";" + apellidos + ";" + funcion + "\n";
+		return idUsuario + ";" + contraseña + ";" + nombre + ";" + apellidos + ";" + funcion + "\n";
 	}
 
 	
@@ -101,13 +101,13 @@ public class Usuario {
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				String[] data = line.split(";");
-				if (data[0].equals(usuario) && data[1].equals(contraseña)) {
+				if (data[0].equals(idUsuario) && data[1].equals(contraseña)) {
 					this.nombre = data[2];
 					this.apellidos = data[3];
 					;
 					this.funcion = funcion.valueOf(data[4]);
 					return true;
-				} else if (data[0].equals(usuario) && !data[1].equals(contraseña)) {
+				} else if (data[0].equals(idUsuario) && !data[1].equals(contraseña)) {
 					return false;
 				}
 			}
@@ -119,7 +119,8 @@ public class Usuario {
 
 	/* Mirar como conectar esto con la base de datos usuarios*/
 	public boolean registrarse() {
-		if (usuario.equals("") || contraseña.equals("") || nombre.equals("") || apellidos.equals("")  || registrado()) {
+	
+		if (idUsuario.equals("") || contraseña.equals("") || nombre.equals("") || apellidos.equals("")  || registrado()) {
 			return false;
 		}
 		File file = new File("datuak/erabiltzaileak.csv");
@@ -142,7 +143,7 @@ public class Usuario {
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				String[] data = line.split(";");
-				if (data[0].equals(usuario)) {
+				if (data[0].equals(idUsuario)) {
 					return true;
 				}
 			}
