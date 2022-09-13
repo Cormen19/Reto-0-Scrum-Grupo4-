@@ -42,7 +42,7 @@ public class Usuario {
 	}
 
 
-	public String getLogin() {
+	public String getUsuario() {
 		return usuario;
 	}
 
@@ -61,12 +61,12 @@ public class Usuario {
 	}
 
 
-	public String getIzena() {
+	public String getNombre() {
 		return nombre;
 	}
 
 	
-	public void setnombre(String nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
@@ -77,16 +77,15 @@ public class Usuario {
 	}
 
 	
-	
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
-	public Permisos getFuntzioa() {
+	public Permisos getFuncion() {
 		return funcion;
 	}
 
-	public void setfuncion(Permisos funcion) {
+	public void setFuncion(Permisos funcion) {
 		this.funcion = funcion;
 	}
 

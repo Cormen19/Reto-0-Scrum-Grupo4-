@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 
+
 import java.awt.CardLayout;
 import javax.swing.JTabbedPane;
 import java.awt.FlowLayout;
@@ -29,14 +30,12 @@ import javax.swing.JButton;
 public class Inicio extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNombreUsuario;
-	private JPasswordField passwordField;
-	private JComboBox comboBoxEgunAutaketa;
 	private JTextField txtUsuario;
-	private JTextField textContraseña;
-	private JTextField txtRepetirC;
-	private JTextField Nombre;
-	private JTextField Apellidos;
+	private JPasswordField passwordField;
+	private JTextField txtNombre;
+	private JTextField txtApellidos;
+	private JPasswordField passwordFieldContraseñaR;
+	private JPasswordField passwordFieldRepetirContraseña;
 
 	/**
 	 * Launch the application.
@@ -76,10 +75,10 @@ public class Inicio extends JFrame {
 		JLabel NombreUsuario = new JLabel("Usuario:");
 		Login.add(NombreUsuario, "cell 1 1,alignx trailing");
 		
-		txtNombreUsuario = new JTextField();
+		txtUsuario = new JTextField();
 		
-		Login.add(txtNombreUsuario, "cell 2 1,growx");
-		txtNombreUsuario.setColumns(10);
+		Login.add(txtUsuario, "cell 2 1,growx");
+		txtUsuario.setColumns(10);
 		
 		JLabel LabelContraseña = new JLabel("Contraseña:");
 		Login.add(LabelContraseña, "cell 1 2,alignx trailing");
@@ -92,7 +91,7 @@ public class Inicio extends JFrame {
 		
 		JPanel Registro = new JPanel();
 		entrada.addTab("Registro", null, Registro, null);
-		Registro.setLayout(new MigLayout("", "[grow][right][left][grow,right]", "[grow][][][][][][][grow][]"));
+		Registro.setLayout(new MigLayout("", "[grow][right][grow,left][grow,right]", "[grow][][][][][][][grow][]"));
 		
 		JLabel lblUsuario = new JLabel("Usuario");
 		Registro.add(lblUsuario, "cell 1 1,alignx trailing");
@@ -104,49 +103,80 @@ public class Inicio extends JFrame {
 		JLabel lblContraseña = new JLabel("Contraseña");
 		Registro.add(lblContraseña, "cell 1 2,alignx trailing");
 		
-		textContraseña = new JTextField();
-		Registro.add(textContraseña, "cell 2 2,growx");
-		textContraseña.setColumns(10);
+		passwordFieldContraseñaR = new JPasswordField();
+		Registro.add(passwordFieldContraseñaR, "cell 2 2,growx");
 		
 		JLabel lblRepetirContraseña = new JLabel("Repetir contraseña");
 		Registro.add(lblRepetirContraseña, "cell 1 3,alignx trailing");
 		
-		txtRepetirC = new JTextField();
-		Registro.add(txtRepetirC, "cell 2 3,growx");
-		txtRepetirC.setColumns(10);
+		passwordFieldRepetirContraseña = new JPasswordField();
+		Registro.add(passwordFieldRepetirContraseña, "cell 2 3,growx");
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		Registro.add(lblNombre, "cell 1 4,alignx trailing");
 		
-		Nombre = new JTextField();
-		Registro.add(Nombre, "cell 2 4,growx");
-		Nombre.setColumns(10);
+		txtNombre = new JTextField();
+		Registro.add(txtNombre, "cell 2 4,growx");
+		txtNombre.setColumns(10);
 		
 		JLabel lblApellido = new JLabel("Apellidos");
 		Registro.add(lblApellido, "cell 1 5,alignx trailing");
 		
-		Apellidos = new JTextField();
-		Registro.add(Apellidos, "cell 2 5,growx");
-		Apellidos.setColumns(10);
+		txtApellidos = new JTextField();
+		Registro.add(txtApellidos, "cell 2 5,growx");
+		txtApellidos.setColumns(10);
 		
 		JLabel lblFuncion = new JLabel("Funcion");
 		Registro.add(lblFuncion, "cell 1 6,alignx trailing");
 		
-		JComboBox comboBoxErregistroFuntzioak = new JComboBox();
-		comboBoxErregistroFuntzioak.setModel(new DefaultComboBoxModel(Permisos.values()));
-		Registro.add(comboBoxErregistroFuntzioak, "cell 2 6,growx");
+		JComboBox comboBoxErregistroFuncion = new JComboBox();
+		comboBoxErregistroFuncion.setModel(new DefaultComboBoxModel(Permisos.values()));
+		Registro.add(comboBoxErregistroFuncion, "cell 2 6,growx");
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
 		Registro.add(btnRegistrarse, "cell 3 8");
 	
 		
-		/**btnRegistrarse.addMouseListener(new MouseAdapter() {
+		btnRegistrarse.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 		
-
-} 
-	
-		}**/
-	}
+				String usuario = txtUsuario.getText();
+				String contraseña = new String(passwordFieldContraseñaR.getPassword());
+				String repetirContraseña = new String(passwordFieldRepetirContraseña.getPassword());
+				String nombre = txtNombre.getText();
+				String apellidos = txtApellidos.getText();
+				Permisos funcion = (Permisos) comboBoxErregistroFuncion.getSelectedItem();
+				
+				if (!contraseña.equals(repetirContraseña)) {
+					JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales.");
+				
+			} else if (usuario.isBlank() || contraseña.isBlank() || repetirContraseña.isBlank() ||  nombre.isBlank() || apellidos.isBlank()) {
+				JOptionPane.showMessageDialog(null, "Hay que completar todos los campos.");
+			}
+			else {
+				Usuario persona = new Usuario();
+				persona.setUsuario(usuario);
+				persona.setContraseña(contraseña);
+				persona.setNombre(nombre);
+				persona.setApellidos(apellidos);
+				persona.setFuncion(funcion);
+				if (persona.registrado()) {
+					JOptionPane.showMessageDialog(null, "El usuario esta registrado.");
+				} else {
+					JOptionPane.showMessageDialog(null, "El usuario se ha registrado.");
+					persona.registrarse();
+					entrada.setSelectedIndex(0);
+				}
+			}
+				
+				
 }
+		});
+		
+	
+	}
+	
+		
+	}
+
