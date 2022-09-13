@@ -169,12 +169,17 @@ public class Inicio extends JFrame {
 					entrada.setSelectedIndex(0);
 				}
 			}
-				
+				txtUsuario.setText("");
+				passwordFieldContraseñaR.setText("");
+				passwordFieldRepetirContraseña.setText("");
+				txtNombre.setText("");
+				txtApellidos.setText("");
+				comboBoxErregistroFuncion.setSelectedIndex(0);
 				
 }
 		});
 		
-	
+		Registro.add(btnRegistrarse, "cell 3 9");
 	}
 	
 		
