@@ -30,34 +30,13 @@ USE `reto0-scrum-grupo4`;
 --
 
 CREATE TABLE `usuario` (
-  `Idusuario` int(3) NOT NULL,
+  `Idusuario` int(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `Apellido` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `Rol` int(1) NOT NULL,
   `Email` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `Contrasena` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`Idusuario`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `Idusuario` int(3) NOT NULL AUTO_INCREMENT;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
