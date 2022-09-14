@@ -1,37 +1,29 @@
 package reto0;
 
 public class Aula {
-
-	private Calefaccion cal; 
-	private boolean encendido;
 	
+	private int IdAula;
+	private Calefaccion cal;
 	
-	
-	public Aula(boolean encendido) {
-		this.encendido =encendido;
+	public int getIdAula() {
+		return IdAula;
 	}
-	
-	
-	public boolean getEncendido() {
-		return encendido;
-		
+	public void setIdAula(int idAula) {
+		IdAula = idAula;
 	}
-	
-	public void setEncendido(boolean encendido) {
-		this.encendido=encendido;
-	}
-	
 	public Calefaccion getCal() {
 		return cal;
 	}
-	
 	public void setCal(Calefaccion cal) {
-		this.cal=cal;
+		this.cal = cal;
 	}
+	
 	@Override
 	public String toString() {
-		return " [encendido= " + encendido +", cal=" + cal; 
-	}
+		return "Aula [IdAula=" + IdAula + ", cal=" + cal + "]";
+	} 
+	
+	
 }
 
 
