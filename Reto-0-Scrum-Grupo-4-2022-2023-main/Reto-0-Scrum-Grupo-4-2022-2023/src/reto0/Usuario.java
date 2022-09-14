@@ -13,7 +13,7 @@ public class Usuario {
 	
 	private String usuario;
 
-	private String contraseña;
+	private String contrasenya;
 
 	private String nombre;
 	
@@ -25,17 +25,17 @@ public class Usuario {
 	
 	public Usuario() {
 		this.usuario = "";
-		this.contraseña = "";
+		this.contrasenya = "";
 		this.nombre = "";
 		this.apellidos = "";
 		this.funcion = funcion.EMPLEADO;
 	}
 
 
-	public Usuario(String usuario, String contraseña, String nombre, String apellidos,
+	public Usuario(String usuario, String contrasenya, String nombre, String apellidos,
 			Permisos funcion) {
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.contrasenya = contrasenya;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		
@@ -52,13 +52,13 @@ public class Usuario {
 		this.usuario = usuario;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasenya() {
+		return contrasenya;
 	}
 
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasenya(String contrasenya) {
+		this.contrasenya = contrasenya;
 	}
 
 
@@ -92,7 +92,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return usuario + ";" + contraseña + ";" + nombre + ";" + apellidos + ";" + funcion + "\n";
+		return usuario + ";" + contrasenya + ";" + nombre + ";" + apellidos + ";" + funcion + "\n";
 	}
 
 	
@@ -102,13 +102,13 @@ public class Usuario {
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				String[] data = line.split(";");
-				if (data[0].equals(usuario) && data[1].equals(contraseña)) {
+				if (data[0].equals(usuario) && data[1].equals(contrasenya)) {
 					this.nombre = data[2];
 					this.apellidos = data[3];
 					;
 					this.funcion = funcion.valueOf(data[4]);
 					return true;
-				} else if (data[0].equals(usuario) && !data[1].equals(contraseña)) {
+				} else if (data[0].equals(usuario) && !data[1].equals(contrasenya)) {
 					return false;
 				}
 			}
@@ -121,7 +121,7 @@ public class Usuario {
 	/* Mirar como conectar esto con la base de datos usuarios*/
 	public boolean registrarse() {
 	
-		if (usuario.equals("") || contraseña.equals("") || nombre.equals("") || apellidos.equals("")  || registrado()) {
+		if (usuario.equals("") || contrasenya.equals("") || nombre.equals("") || apellidos.equals("")  || registrado()) {
 			return false;
 		}
 		File file = new File("datuak/erabiltzaileak.csv");

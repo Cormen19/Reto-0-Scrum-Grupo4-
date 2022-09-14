@@ -37,8 +37,8 @@ public class Inicio extends JFrame {
 	private JPasswordField passwordField;
 	private JTextField txtNombre;
 	private JTextField txtApellidos;
-	private JPasswordField passwordFieldContraseñaR;
-	private JPasswordField passwordFieldRepetirContraseña;
+	private JPasswordField passwordFieldContrasenya;
+	private JPasswordField passwordFieldRepetirContrasenya;
 	private JTextField txtIdUsuario;
 
 	/**
@@ -83,8 +83,8 @@ public class Inicio extends JFrame {
 		Login.add(txtUsuario, "cell 2 1,growx");
 		txtUsuario.setColumns(10);
 		
-		JLabel LabelContraseña = new JLabel("Contraseña:");
-		Login.add(LabelContraseña, "cell 1 2,alignx trailing");
+		JLabel LabelContrasenya = new JLabel("Contraseña:");
+		Login.add(LabelContrasenya, "cell 1 2,alignx trailing");
 		
 		passwordField = new JPasswordField();
 		Login.add(passwordField, "cell 2 2,growx");
@@ -107,17 +107,17 @@ public class Inicio extends JFrame {
 		Registro.add(txtUsuario, "cell 2 1,growx");
 		txtUsuario.setColumns(10);
 		
-		JLabel lblContraseña = new JLabel("Contraseña");
-		Registro.add(lblContraseña, "cell 1 2,alignx trailing");
+		JLabel lblContrasenya = new JLabel("Contraseña");
+		Registro.add(lblContrasenya, "cell 1 2,alignx trailing");
 		
-		passwordFieldContraseñaR = new JPasswordField();
-		Registro.add(passwordFieldContraseñaR, "cell 2 2,growx");
+		passwordFieldContrasenya = new JPasswordField();
+		Registro.add(passwordFieldContrasenya, "cell 2 2,growx");
 		
-		JLabel lblRepetirContraseña = new JLabel("Repetir contraseña");
-		Registro.add(lblRepetirContraseña, "cell 1 3,alignx trailing");
+		JLabel lblRepetirContrasenya = new JLabel("Repetir contraseña");
+		Registro.add(lblRepetirContrasenya, "cell 1 3,alignx trailing");
 		
-		passwordFieldRepetirContraseña = new JPasswordField();
-		Registro.add(passwordFieldRepetirContraseña, "cell 2 3,growx");
+		passwordFieldRepetirContrasenya = new JPasswordField();
+		Registro.add(passwordFieldRepetirContrasenya, "cell 2 3,growx");
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		Registro.add(lblNombre, "cell 1 4,alignx trailing");
@@ -149,22 +149,22 @@ public class Inicio extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 		
 				String usuario = txtUsuario.getText();
-				String contraseña = new String(passwordFieldContraseñaR.getPassword());
-				String repetirContraseña = new String(passwordFieldRepetirContraseña.getPassword());
+				String contrasenya = new String(passwordFieldContrasenya.getPassword());
+				String repetirContrasenya = new String(passwordFieldRepetirContrasenya.getPassword());
 				String nombre = txtNombre.getText();
 				String apellidos = txtApellidos.getText();
 				Permisos funcion = (Permisos) comboBoxErregistroFuncion.getSelectedItem();
 				
-				if (!contraseña.equals(repetirContraseña)) {
+				if (!contrasenya.equals(repetirContrasenya)) {
 					JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales.");
 				
-			} else if (usuario.isBlank() || contraseña.isBlank() || repetirContraseña.isBlank() ||  nombre.isBlank() || apellidos.isBlank()) {
+			} else if (usuario.isBlank() || contrasenya.isBlank() || repetirContrasenya.isBlank() ||  nombre.isBlank() || apellidos.isBlank()) {
 				JOptionPane.showMessageDialog(null, "Hay que completar todos los campos.");
 			}
 			else {
 				Usuario persona = new Usuario();
 				persona.setUsuario(usuario);
-				persona.setContraseña(contraseña);
+				persona.setContrasenya(contrasenya);
 				persona.setNombre(nombre);
 				persona.setApellidos(apellidos);
 				persona.setFuncion(funcion);
@@ -177,8 +177,8 @@ public class Inicio extends JFrame {
 				}
 			}
 				txtUsuario.setText("");
-				passwordFieldContraseñaR.setText("");
-				passwordFieldRepetirContraseña.setText("");
+				passwordFieldContrasenya.setText("");
+				passwordFieldRepetirContrasenya.setText("");
 				txtNombre.setText("");
 				txtApellidos.setText("");
 				comboBoxErregistroFuncion.setSelectedIndex(0);
