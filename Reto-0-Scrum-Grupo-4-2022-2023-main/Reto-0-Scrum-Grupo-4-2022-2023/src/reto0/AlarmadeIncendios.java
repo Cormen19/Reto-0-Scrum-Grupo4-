@@ -1,11 +1,10 @@
 package reto0;
 
-public class Calefaccion {
-
+public class AlarmadeIncendios {
 	private int idCal;
 	private boolean encendido;
-	public Calefaccion(int idCal,boolean encendido) {
-	   this.encendido=encendido;
+	public AlarmadeIncendios(int idCal,boolean encendido) {
+	    this.encendido=encendido;
 		this.idCal= 0;
 		
 	}
@@ -28,3 +27,5 @@ public class Calefaccion {
 		this.encendido=encendido;
 	}
 }
+
+
