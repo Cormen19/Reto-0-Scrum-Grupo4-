@@ -1,3 +1,4 @@
+package reto0;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 public class Usuario {
 
 	
-	private String idUsuario;
+	private String usuario;
 
 	private String contraseña;
 
@@ -23,7 +24,7 @@ public class Usuario {
 
 	
 	public Usuario() {
-		this.idUsuario = "";
+		this.usuario = "";
 		this.contraseña = "";
 		this.nombre = "";
 		this.apellidos = "";
@@ -31,9 +32,9 @@ public class Usuario {
 	}
 
 
-	public Usuario(String idUsuario, String contraseña, String nombre, String apellidos,
+	public Usuario(String usuario, String contraseña, String nombre, String apellidos,
 			Permisos funcion) {
-		this.idUsuario = idUsuario;
+		this.usuario = usuario;
 		this.contraseña = contraseña;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -42,13 +43,13 @@ public class Usuario {
 	}
 
 
-	public String getIdUsuario() {
-		return idUsuario;
+	public String getUsuario() {
+		return usuario;
 	}
 
 
-	public void setIdUsuario(String idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getContraseña() {
@@ -91,7 +92,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return idUsuario + ";" + contraseña + ";" + nombre + ";" + apellidos + ";" + funcion + "\n";
+		return usuario + ";" + contraseña + ";" + nombre + ";" + apellidos + ";" + funcion + "\n";
 	}
 
 	
@@ -101,13 +102,13 @@ public class Usuario {
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				String[] data = line.split(";");
-				if (data[0].equals(idUsuario) && data[1].equals(contraseña)) {
+				if (data[0].equals(usuario) && data[1].equals(contraseña)) {
 					this.nombre = data[2];
 					this.apellidos = data[3];
 					;
 					this.funcion = funcion.valueOf(data[4]);
 					return true;
-				} else if (data[0].equals(idUsuario) && !data[1].equals(contraseña)) {
+				} else if (data[0].equals(usuario) && !data[1].equals(contraseña)) {
 					return false;
 				}
 			}
@@ -120,7 +121,7 @@ public class Usuario {
 	/* Mirar como conectar esto con la base de datos usuarios*/
 	public boolean registrarse() {
 	
-		if (idUsuario.equals("") || contraseña.equals("") || nombre.equals("") || apellidos.equals("")  || registrado()) {
+		if (usuario.equals("") || contraseña.equals("") || nombre.equals("") || apellidos.equals("")  || registrado()) {
 			return false;
 		}
 		File file = new File("datuak/erabiltzaileak.csv");
@@ -143,7 +144,7 @@ public class Usuario {
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				String[] data = line.split(";");
-				if (data[0].equals(idUsuario)) {
+				if (data[0].equals(usuario)) {
 					return true;
 				}
 			}

@@ -1,3 +1,4 @@
+package reto0;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -32,7 +33,7 @@ import java.awt.event.ActionEvent;
 public class Inicio extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtidUsuario;
+	private JTextField txtUsuario;
 	private JPasswordField passwordField;
 	private JTextField txtNombre;
 	private JTextField txtApellidos;
@@ -78,9 +79,9 @@ public class Inicio extends JFrame {
 		JLabel NombreUsuario = new JLabel("Usuario:");
 		Login.add(NombreUsuario, "cell 1 1,alignx trailing");
 		
-		txtIdUsuario = new JTextField();
-		Login.add(txtIdUsuario, "cell 2 1,growx");
-		txtIdUsuario.setColumns(10);
+		txtUsuario = new JTextField();
+		Login.add(txtUsuario, "cell 2 1,growx");
+		txtUsuario.setColumns(10);
 		
 		JLabel LabelContraseña = new JLabel("Contraseña:");
 		Login.add(LabelContraseña, "cell 1 2,alignx trailing");
@@ -102,9 +103,9 @@ public class Inicio extends JFrame {
 		JLabel lblUsuario = new JLabel("Usuario");
 		Registro.add(lblUsuario, "cell 1 1,alignx trailing");
 		
-		txtidUsuario = new JTextField();
-		Registro.add(txtidUsuario, "cell 2 1,growx");
-		txtidUsuario.setColumns(10);
+		txtUsuario = new JTextField();
+		Registro.add(txtUsuario, "cell 2 1,growx");
+		txtUsuario.setColumns(10);
 		
 		JLabel lblContraseña = new JLabel("Contraseña");
 		Registro.add(lblContraseña, "cell 1 2,alignx trailing");
@@ -147,7 +148,7 @@ public class Inicio extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 		
-				String usuario = txtidUsuario.getText();
+				String usuario = txtUsuario.getText();
 				String contraseña = new String(passwordFieldContraseñaR.getPassword());
 				String repetirContraseña = new String(passwordFieldRepetirContraseña.getPassword());
 				String nombre = txtNombre.getText();
@@ -162,7 +163,7 @@ public class Inicio extends JFrame {
 			}
 			else {
 				Usuario persona = new Usuario();
-				persona.setIdUsuario(usuario);
+				persona.setUsuario(usuario);
 				persona.setContraseña(contraseña);
 				persona.setNombre(nombre);
 				persona.setApellidos(apellidos);
@@ -175,7 +176,7 @@ public class Inicio extends JFrame {
 					entrada.setSelectedIndex(0);
 				}
 			}
-				txtidUsuario.setText("");
+				txtUsuario.setText("");
 				passwordFieldContraseñaR.setText("");
 				passwordFieldRepetirContraseña.setText("");
 				txtNombre.setText("");
