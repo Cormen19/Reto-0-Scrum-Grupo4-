@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-
+import back.objektuak.Erabiltzailea;
 
 import java.awt.CardLayout;
 import javax.swing.JTabbedPane;
@@ -89,17 +89,40 @@ public class Inicio extends JFrame {
 		Login.add(txtUsuario, "cell 2 1,growx");
 		txtUsuario.setColumns(10);
 		
-		JLabel LabelContrasenya = new JLabel("Contraseña:");
+		JLabel LabelContrasenya = new JLabel("Contrasenya:");
 		Login.add(LabelContrasenya, "cell 1 2,alignx trailing");
 		
 		passwordField = new JPasswordField();
 		Login.add(passwordField, "cell 2 2,growx");
 		
+		/*Atascado funcion login y pasar a los planos*/
 		JButton bntConfirmar = new JButton("Confirmar");
-		bntConfirmar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		bntConfirmar.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					
+					String nombre = txtUsuario.getText();
+					String contrasenya = new String(passwordField.getPassword());
+					
+				
+			
+		 if (  contrasenya.isBlank()  || nombre.isBlank() ) {
+			JOptionPane.showMessageDialog(null, "Hay que completar todos los campos.");
+		}
+		
+				Usuario persona = new Usuario(Base_de_Datos.consultar_Ultimo_Usuario(), nombre, contrasenya, null, null, null);
+				
+				if (nombre.login() && contrasenya.login() ) {
+				
+				}
+				
+				
+				else if (!nombre.login() || !contrasenya.login())
+					JOptionPane.showMessageDialog(null, "El usario o la contraseña estan mal escritas.");
 			}
-		});
+			});
+		Login.add(bntConfirmar, "cell 3 4,alignx right");
+	
 		
 		
 		

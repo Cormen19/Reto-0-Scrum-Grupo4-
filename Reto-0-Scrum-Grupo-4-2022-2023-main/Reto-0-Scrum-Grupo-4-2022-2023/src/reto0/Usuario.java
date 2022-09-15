@@ -122,6 +122,9 @@ public class Usuario {
 
 
 	public boolean login() {
+		if(contrasenya.equals("") || nombre.equals("")) {
+			return false;
+		}
 		
 		return Base_de_Datos.usuarioValido(this.nombre,this.contrasenya);
 	}
