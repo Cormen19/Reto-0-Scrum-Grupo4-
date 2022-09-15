@@ -49,22 +49,25 @@ public class Base_de_Datos {
 		
 			Statement s = conn.createStatement();
 			ResultSet rs = s.executeQuery("Select * "
-									+ "From aula;");
+									+ "From calefaccion;");
 
 			while(rs.next()) {	
 				Calefaccion auxCalefaccion = new Calefaccion(rs.getInt("Id_Calefacion"),rs.getBoolean("Encendido"));
+				calefaccion.add(auxCalefaccion);
 							}	
 			s.close();
 			rs.close();
 			conn.close();
-		
+			
 		}catch(SQLException sql) {
 			System.out.println("Error al conectar a la base de datos ");
+			return null;
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
-		return null;
+		return calefaccion;
 		
 	}
 
@@ -153,5 +156,31 @@ public class Base_de_Datos {
 
 	}
 	
+	
+	
+	public static int consultar_Ultimo_Usuario(){
+		int numero=0;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(url,"root",Contra);
+			Statement s = conn.createStatement();
+			String query = ("Select max(Id_Usuario) "
+							+ "From usuario ;");
+			ResultSet rs = s.executeQuery(query);
+			rs.next();
+			try {
+				numero=rs.getInt("max(Id_Usuario)");
+			}catch(Exception e) {
+				System.out.println("No hay Usuarios en la base de datos");
+			}
+			numero++;
+			return numero;
+		}catch(SQLException sql) {
+			System.out.println("Error al conectar a la base de datos");
+		}catch(ClassNotFoundException e) {
+			System.out.println("Error al conectar a la base de datos");
+		}
+		return numero;
+	}
 	
 }
