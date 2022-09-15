@@ -10,47 +10,68 @@ import java.util.Scanner;
 
 public class Usuario {
 
+	private int idUsuari;
 	
-	private String usuario;
-
-	private String contrasenya;
-
 	private String nombre;
 	
-	private String apellidos;
+	private String apellido;
 	
-
-	private Permisos funcion;
-
-	
-	public Usuario() {
-		this.usuario = "";
-		this.contrasenya = "";
-		this.nombre = "";
-		this.apellidos = "";
-		this.funcion = funcion.EMPLEADO;
+	public enum Permisos {
+		/** Empleado */
+		Profesor,
+		/**Administrador */
+		ADMINISTRADOR
 	}
+	private Permisos rol ;
+	
+
+	private String correo;
+	
+	private String contrasenya;
 
 
-	public Usuario(String usuario, String contrasenya, String nombre, String apellidos,
-			Permisos funcion) {
-		this.usuario = usuario;
-		this.contrasenya = contrasenya;
+	
+	
+	public Usuario(int idUsuari, String nombre, String apellidos, Permisos rol, String correo, String contrasenya) {
+		super();
+		this.idUsuari = idUsuari;
 		this.nombre = nombre;
-		this.apellidos = apellidos;
-		
-		this.funcion = funcion;
+		this.apellido = apellidos;
+		this.rol = rol;
+		this.correo = correo;
+		this.contrasenya = contrasenya;
 	}
 
 
-	public String getUsuario() {
-		return usuario;
+	public int getIdUsuari() {
+		return idUsuari;
 	}
 
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setIdUsuari(int idUsuari) {
+		this.idUsuari = idUsuari;
 	}
+
+
+	public Permisos getRol() {
+		return rol;
+	}
+
+
+	public void setRol(Permisos rol) {
+		this.rol = rol;
+	}
+
+
+	public String getCorreo() {
+		return correo;
+	}
+
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
 
 	public String getContrasenya() {
 		return contrasenya;
@@ -74,83 +95,51 @@ public class Usuario {
 	
 
 	public String getApellidos() {
-		return apellidos;
+		return apellido;
 	}
 
 	
 	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+		this.apellido = apellidos;
 	}
 
 	public Permisos getFuncion() {
-		return funcion;
+		return rol;
 	}
 
 	public void setFuncion(Permisos funcion) {
-		this.funcion = funcion;
+		this.rol = funcion;
+		
 	}
 
+	
+
+	
 	@Override
 	public String toString() {
-		return usuario + ";" + contrasenya + ";" + nombre + ";" + apellidos + ";" + funcion + "\n";
+		return "insert into usuario values("+String.valueOf(idUsuari)+",'"+this.nombre+"','"+this.apellido+"','"+String.valueOf(this.rol)+"','"+this.correo+"','"+this.contrasenya+"');";
 	}
 
-	
+
 	public boolean login() {
-		File file = new File("datuak/erabiltzaileak.csv");
-		try (Scanner sc = new Scanner(file)){
-			while (sc.hasNextLine()) {
-				String line = sc.nextLine();
-				String[] data = line.split(";");
-				if (data[0].equals(usuario) && data[1].equals(contrasenya)) {
-					this.nombre = data[2];
-					this.apellidos = data[3];
-					;
-					this.funcion = funcion.valueOf(data[4]);
-					return true;
-				} else if (data[0].equals(usuario) && !data[1].equals(contrasenya)) {
-					return false;
-				}
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		return false;
+		
+		return Base_de_Datos.usuarioValido(this.nombre,this.contrasenya);
 	}
 
-	/* Mirar como conectar esto con la base de datos usuarios*/
+	/* Mirar como conectar esto con la base de datos usuarios
+	 * Funciona*/
 	public boolean registrarse() {
 	
-		if (usuario.equals("") || contrasenya.equals("") || nombre.equals("") || apellidos.equals("")  || registrado()) {
+		if ( String.valueOf(rol).equals("")||correo.equals("")||contrasenya.equals("") || nombre.equals("") || apellido.equals("")  ) {
 			return false;
 		}
-		File file = new File("datuak/erabiltzaileak.csv");
-		try (PrintWriter pw = new PrintWriter(new FileWriter(file, true))) {
-			pw.print(this.toString());
-			return true;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return false;
+		
+		
+		return Base_de_Datos.registrarUsuario(this.toString());
 	}
 
 	
 	public boolean registrado(){
-		File file = new File("datuak/erabiltzaileak.csv");
-		if (!file.exists()) {
-			return false;
-		}
-		try (Scanner sc = new Scanner(file)){
-			while (sc.hasNextLine()) {
-				String line = sc.nextLine();
-				String[] data = line.split(";");
-				if (data[0].equals(usuario)) {
-					return true;
-				}
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		return false;
+		return Base_de_Datos.UsuarioExiste(this.nombre,this.apellido);
 	}
 }
