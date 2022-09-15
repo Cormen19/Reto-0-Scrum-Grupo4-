@@ -23,6 +23,8 @@ import java.awt.event.MouseEvent;
 import java.time.LocalDate;
 
 import net.miginfocom.swing.MigLayout;
+import reto0.Usuario.Permisos;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JComboBox;
@@ -34,13 +36,14 @@ public class Inicio extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtUsuario;
-	private JPasswordField passwordField;
 	private JTextField txtNombre;
+	private JPasswordField passwordField;
 	private JTextField txtApellidos;
+	private JTextField txtEmail;
 	private JPasswordField passwordFieldContrasenya;
 	private JPasswordField passwordFieldRepetirContrasenya;
 	private JTextField txtIdUsuario;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -73,9 +76,11 @@ public class Inicio extends JFrame {
 		JTabbedPane entrada = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(entrada);
 		
+		
 		JPanel Login = new JPanel();
 		entrada.addTab("Login", null, Login, null);
 		Login.setLayout(new MigLayout("", "[grow][right][grow,left][grow][]", "[grow][][][grow][]"));
+		
 		
 		JLabel NombreUsuario = new JLabel("Usuario:");
 		Login.add(NombreUsuario, "cell 1 1,alignx trailing");
@@ -95,47 +100,56 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		Login.add(bntConfirmar, "cell 4 4");
 		
 		JPanel Registro = new JPanel();
 		entrada.addTab("Registro", null, Registro, null);
 		Registro.setLayout(new MigLayout("", "[grow][right][grow,left][grow,right]", "[grow][][][][][][][grow][]"));
 		
-		JLabel lblUsuario = new JLabel("Usuario");
-		Registro.add(lblUsuario, "cell 1 1,alignx trailing");
+		JLabel lblNombre = new JLabel("Nombre");
+		Registro.add(lblNombre, "flowx,cell 1 1,alignx trailing");
 		
-		txtUsuario = new JTextField();
-		Registro.add(txtUsuario, "cell 2 1,growx");
-		txtUsuario.setColumns(10);
+		txtNombre = new JTextField();
+		Registro.add(txtNombre, "cell 2 1,growx");
+		txtNombre.setColumns(10);
 		
-		JLabel lblContrasenya = new JLabel("Contraseña");
-		Registro.add(lblContrasenya, "cell 1 2,alignx trailing");
+		JLabel lblApellido = new JLabel("Apellidos");
+		Registro.add(lblApellido, "flowx,cell 1 2,alignx trailing");
 		
-		passwordFieldContrasenya = new JPasswordField();
-		Registro.add(passwordFieldContrasenya, "cell 2 2,growx");
-		
-		JLabel lblRepetirContrasenya = new JLabel("Repetir contraseña");
-		Registro.add(lblRepetirContrasenya, "cell 1 3,alignx trailing");
+		txtApellidos = new JTextField();
+		Registro.add(txtApellidos, "cell 2 2,growx");
+		txtApellidos.setColumns(10);
 		
 		passwordFieldRepetirContrasenya = new JPasswordField();
 		Registro.add(passwordFieldRepetirContrasenya, "cell 2 3,growx");
 		
-		JLabel lblNombre = new JLabel("Nombre");
-		Registro.add(lblNombre, "cell 1 4,alignx trailing");
+		JLabel lblRepetirContrasenya = new JLabel("Repetir contraseña");
+		Registro.add(lblRepetirContrasenya, "flowx,cell 1 4,alignx trailing");
 		
-		txtNombre = new JTextField();
-		Registro.add(txtNombre, "cell 2 4,growx");
-		txtNombre.setColumns(10);
+		passwordFieldContrasenya = new JPasswordField();
+		Registro.add(passwordFieldContrasenya, "cell 2 4,growx");
 		
-		JLabel lblApellido = new JLabel("Apellidos");
-		Registro.add(lblApellido, "cell 1 5,alignx trailing");
+		JLabel lblEmail = new JLabel("Email");
+		Registro.add(lblEmail, "cell 1 5,alignx trailing");
 		
-		txtApellidos = new JTextField();
-		Registro.add(txtApellidos, "cell 2 5,growx");
-		txtApellidos.setColumns(10);
+		txtEmail = new JTextField();
+		Registro.add(txtEmail, "cell 2 5,growx");
+		txtEmail.setColumns(10);
 		
-		JLabel lblFuncion = new JLabel("Funcion");
-		Registro.add(lblFuncion, "cell 1 6,alignx trailing");
+		JLabel lblRol = new JLabel("Rol");
+		Registro.add(lblRol, "cell 1 6,alignx trailing");
 		
 		JComboBox comboBoxErregistroFuncion = new JComboBox();
 		comboBoxErregistroFuncion.setModel(new DefaultComboBoxModel(Permisos.values()));
@@ -149,45 +163,44 @@ public class Inicio extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 		
-				String usuario = txtUsuario.getText();
+				String email = txtEmail.getText();
 				String contrasenya = new String(passwordFieldContrasenya.getPassword());
 				String repetirContrasenya = new String(passwordFieldRepetirContrasenya.getPassword());
 				String nombre = txtNombre.getText();
 				String apellidos = txtApellidos.getText();
-				Permisos funcion = (Permisos) comboBoxErregistroFuncion.getSelectedItem();
+				
+				Permisos rol = (Permisos) comboBoxErregistroFuncion.getSelectedItem();
 				
 				if (!contrasenya.equals(repetirContrasenya)) {
 					JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales.");
 				
-			} else if (usuario.isBlank() || contrasenya.isBlank() || repetirContrasenya.isBlank() ||  nombre.isBlank() || apellidos.isBlank()) {
+			} else if (email.isBlank() || contrasenya.isBlank() || repetirContrasenya.isBlank() ||  nombre.isBlank() || apellidos.isBlank()) {
 				JOptionPane.showMessageDialog(null, "Hay que completar todos los campos.");
 			}
 			else {
-				Usuario persona = new Usuario();
-				persona.setUsuario(usuario);
-				persona.setContrasenya(contrasenya);
-				persona.setNombre(nombre);
-				persona.setApellidos(apellidos);
-				persona.setFuncion(funcion);
+				Usuario persona = new Usuario( Base_de_Datos.consultar_Ultimo_Usuario(),  nombre,  apellidos,  rol,  email,  contrasenya);
+			
 				if (persona.registrado()) {
 					JOptionPane.showMessageDialog(null, "El usuario esta registrado.");
 				} else {
 					JOptionPane.showMessageDialog(null, "El usuario se ha registrado.");
-					persona.registrarse();
+					persona. registrarse();
 					entrada.setSelectedIndex(0);
 				}
 			}
 				txtUsuario.setText("");
 				passwordFieldContrasenya.setText("");
 				passwordFieldRepetirContrasenya.setText("");
-				txtNombre.setText("");
 				txtApellidos.setText("");
+				txtEmail.setText("");
 				comboBoxErregistroFuncion.setSelectedIndex(0);
 				
 }
 		});
-		
 		Registro.add(btnRegistrarse, "cell 3 9");
+		
+		JLabel lblContrasenya = new JLabel("Contraseña");
+		Registro.add(lblContrasenya, "cell 1 3,alignx trailing");
 	}
 	
 		

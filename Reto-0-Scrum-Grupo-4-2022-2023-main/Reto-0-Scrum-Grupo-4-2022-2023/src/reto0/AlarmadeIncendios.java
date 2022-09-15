@@ -14,9 +14,6 @@ public class AlarmadeIncendios {
 		
 	}
 	
-	public void setIdCal(int idCal) {
-		this.idCal=idCal;
-	}
 	
 	public boolean getEncendido() {
 		return encendido;
