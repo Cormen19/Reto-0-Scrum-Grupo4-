@@ -40,5 +40,5 @@ public class Aula {
 		return " [idAula= " + idAula +", cal=" + cal + ", alarma= " + alarma ; 
 	}
 
-
+}
 
