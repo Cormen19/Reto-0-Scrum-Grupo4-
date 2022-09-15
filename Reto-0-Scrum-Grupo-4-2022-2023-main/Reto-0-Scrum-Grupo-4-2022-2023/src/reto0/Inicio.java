@@ -48,7 +48,7 @@ public class Inicio extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Base_de_Datos.aulas();
+					
 					Inicio frame = new Inicio();
 					frame.setVisible(true);
 					
