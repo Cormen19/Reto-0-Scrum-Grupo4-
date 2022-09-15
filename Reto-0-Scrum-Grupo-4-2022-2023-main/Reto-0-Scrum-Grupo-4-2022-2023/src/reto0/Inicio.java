@@ -76,6 +76,7 @@ public class Inicio extends JFrame {
 		JTabbedPane entrada = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(entrada);
 		
+		
 		JPanel Login = new JPanel();
 		entrada.addTab("Login", null, Login, null);
 		Login.setLayout(new MigLayout("", "[grow][right][grow,left][grow][]", "[grow][][][grow][]"));
@@ -177,12 +178,8 @@ public class Inicio extends JFrame {
 				JOptionPane.showMessageDialog(null, "Hay que completar todos los campos.");
 			}
 			else {
-				Usuario persona = new Usuario( 1,  nombre,  apellidos,  rol,  email,  contrasenya);
-				
-				persona.setContrasenya(contrasenya);
-				persona.setNombre(nombre);
-				persona.setApellidos(apellidos);
-				persona.setRol(rol);
+				Usuario persona = new Usuario( Base_de_Datos.consultar_Ultimo_Usuario(),  nombre,  apellidos,  rol,  email,  contrasenya);
+			
 				if (persona.registrado()) {
 					JOptionPane.showMessageDialog(null, "El usuario esta registrado.");
 				} else {
@@ -200,7 +197,6 @@ public class Inicio extends JFrame {
 				
 }
 		});
-		
 		Registro.add(btnRegistrarse, "cell 3 9");
 		
 		JLabel lblContrasenya = new JLabel("Contraseña");
