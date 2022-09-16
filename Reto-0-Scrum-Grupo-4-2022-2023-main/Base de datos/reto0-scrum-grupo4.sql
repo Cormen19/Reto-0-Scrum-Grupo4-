@@ -18,7 +18,7 @@ USE `reto0-scrum-grupo4`;
 --
 
 CREATE TABLE Usuario (
-  Id_Usuario int PRIMARY KEY AUTO_INCREMENT,
+  IdUsuario int PRIMARY KEY AUTO_INCREMENT,
   Nombre varchar(50)  NOT NULL,
   Apellido varchar(50)  NOT NULL,
   rol Enum("Profesor","Bedel","Seguridad","Alumno")NOT NULL,
@@ -36,8 +36,8 @@ Id_Calefacion int primary key auto_increment,
 Encendido boolean not null default false
 );
 
-CREATE TABLE Aula(
-Id_Aula int  primary key auto_increment ,
+CREATE TABLE Aulas(
+IdAula int  primary key auto_increment ,
 Alarma_de_Incendios int,
 Calefacion int,
 constraint fk_Alarma_de_Incendios foreign key (Alarma_de_Incendios) references Alarma_de_Incendios(Id_Alarma),
@@ -47,7 +47,7 @@ constraint fk_Calefacion foreign key (Calefacion) references Calefacion(Id_Calef
 CREATE TABLE Monitoriza(
 Usuario int,
 Aula int, 
-constraint pk_Usuario_Aula primary key (Usuario,Aula),
+constraint pk_Usuario_Aula primary key (Usuario,Autla),
 constraint fk_Usuario foreign key (Usuario) references Usuario(Id_Usuario),
-constraint fk_Aula foreign key (Aula) references Aula(Id_Aula)
+constraint fk_Aula foreign key (Aula) references Usuario(Id_Aula)
 );

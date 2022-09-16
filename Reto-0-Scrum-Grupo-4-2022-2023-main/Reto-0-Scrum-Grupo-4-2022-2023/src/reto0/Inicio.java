@@ -21,6 +21,7 @@ import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,14 +45,16 @@ public class Inicio extends JFrame {
 	private JTextField txtEmail;
 	private JPasswordField passwordFieldContrasenya;
 	private JPasswordField passwordFieldRepetirContrasenya;
-	
+	public static ArrayList<AlarmadeIncendios> alarmadeIncendios = new ArrayList<AlarmadeIncendios>();
+	public static ArrayList<Calefaccion> calefaccion = new ArrayList<Calefaccion>();
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		Inicio frame = new Inicio();
 		frame.setVisible(true);
-	
+		alarmadeIncendios = Base_de_Datos.cargarAlarmasdeIncendios();
+		calefaccion = Base_de_Datos.cargarCalefacion();
 	}
 
 	/**

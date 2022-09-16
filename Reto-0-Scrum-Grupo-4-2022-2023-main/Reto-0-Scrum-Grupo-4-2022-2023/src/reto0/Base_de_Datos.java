@@ -70,6 +70,37 @@ public class Base_de_Datos {
 		return calefaccion;
 		
 	}
+	
+	public static ArrayList<AlarmadeIncendios> cargarAlarmasdeIncendios(){
+		 ArrayList<AlarmadeIncendios> alarmadeIncendios = new ArrayList<AlarmadeIncendios>();
+		 
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(url,"root",Contra);
+		
+			Statement s = conn.createStatement();
+			ResultSet rs = s.executeQuery("Select * "
+									+ "From calefaccion;");
+
+			while(rs.next()) {	
+				AlarmadeIncendios auxAlarma = new AlarmadeIncendios(rs.getInt("Id_Alarma"),rs.getBoolean("Encendido"));
+				alarmadeIncendios.add(auxAlarma);
+							}	
+			s.close();
+			rs.close();
+			conn.close();
+			
+		}catch(SQLException sql) {
+			System.out.println("Error al conectar a la base de datos ");
+			return null;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		return alarmadeIncendios;
+		
+	}
 
 	public static boolean registrarUsuario(String datos) {
 		
