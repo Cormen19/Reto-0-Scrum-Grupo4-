@@ -21,6 +21,8 @@ import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import net.miginfocom.swing.MigLayout;
 import reto0.Usuario.Permisos;
@@ -42,23 +44,14 @@ public class Inicio extends JFrame {
 	private JTextField txtEmail;
 	private JPasswordField passwordFieldContrasenya;
 	private JPasswordField passwordFieldRepetirContrasenya;
-	private JTextField txtIdUsuario;
 	
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Inicio frame = new Inicio();
-					frame.setVisible(true);
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		Inicio frame = new Inicio();
+		frame.setVisible(true);
+	
 	}
 
 	/**
@@ -187,7 +180,7 @@ public class Inicio extends JFrame {
 				if (!contrasenya.equals(repetirContrasenya)) {
 					JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales.");
 				
-			} else if (email.isBlank() || contrasenya.isBlank() || repetirContrasenya.isBlank() ||  nombre.isBlank() || apellidos.isBlank()) {
+			} else if (!comprobarEmail(email)|| contrasenya.isBlank() || repetirContrasenya.isBlank() ||  nombre.isBlank() || apellidos.isBlank()) {
 				JOptionPane.showMessageDialog(null, "Hay que completar todos los campos.");
 			}
 			else {
@@ -196,12 +189,17 @@ public class Inicio extends JFrame {
 				if (persona.registrado()) {
 					JOptionPane.showMessageDialog(null, "El usuario esta registrado.");
 				} else {
-					JOptionPane.showMessageDialog(null, "El usuario se ha registrado.");
-					persona. registrarse();
-					entrada.setSelectedIndex(0);
+					if(	persona. registrarse()) {
+						JOptionPane.showMessageDialog(null, "El usuario se ha registrado.");
+						persona. registrarse();
+						entrada.setSelectedIndex(0);
+					}else {
+						JOptionPane.showMessageDialog(null, "Fallo en el registro, hay algun campo vacio");
+					}
+					
 				}
 			}
-				txtUsuario.setText("");
+				txtNombre.setText("");
 				passwordFieldContrasenya.setText("");
 				passwordFieldRepetirContrasenya.setText("");
 				txtApellidos.setText("");
@@ -216,6 +214,24 @@ public class Inicio extends JFrame {
 		Registro.add(lblContrasenya, "cell 1 3,alignx trailing");
 	}
 	
+	/*Comprueba que el email es valido para el registro del usuario 
+	 * Si es valido devuelve true 
+	 * Sino devuelve false*/
+	private static boolean comprobarEmail(String email) {
+		Pattern pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+ 
+        Matcher mather = pattern.matcher(email);
+ 
+        if (mather.find()) {
+            System.out.println("El email ingresado es válido.");
+            return true;
+        } 
+        return false;
 		
 	}
+	
+}
+
 
