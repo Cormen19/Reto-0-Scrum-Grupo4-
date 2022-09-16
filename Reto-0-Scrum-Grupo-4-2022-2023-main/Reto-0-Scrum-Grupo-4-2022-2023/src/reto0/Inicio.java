@@ -114,7 +114,8 @@ public class Inicio extends JFrame {
 				
 				if (persona.login()) {
 					JOptionPane.showMessageDialog(null, "El usuario se ha logeado correctamente.");
-					
+					MenuPlanoCentro.main(null);
+					dispose();
 				}
 				
 				

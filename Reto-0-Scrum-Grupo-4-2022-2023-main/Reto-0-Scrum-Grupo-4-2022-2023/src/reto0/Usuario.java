@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Usuario {
 
-	private int idUsuari;
+	private int Idusuari;
 	
 	private String nombre;
 	
@@ -32,9 +32,9 @@ public class Usuario {
 
 	
 	
-	public Usuario(int idUsuari, String nombre, String apellidos, Permisos rol, String correo, String contrasenya) {
+	public Usuario(int Idusuari, String nombre, String apellidos, Permisos rol, String correo, String contrasenya) {
 		
-		this.idUsuari = idUsuari;
+		this.Idusuari = Idusuari;
 		this.nombre = nombre;
 		this.apellido = apellidos;
 		this.rol = rol;
@@ -49,13 +49,13 @@ public class Usuario {
 
 
 	public int getIdUsuari() {
-		return idUsuari;
+		return Idusuari;
 		
 	}
 
 
-	public void setIdUsuari(int idUsuari) {
-		this.idUsuari = idUsuari;
+	public void setIdUsuari(int Idusuari) {
+		this.Idusuari = Idusuari;
 	}
 
 
@@ -123,7 +123,7 @@ public class Usuario {
 	
 	@Override
 	public String toString() {
-		return "insert into usuario values("+String.valueOf(idUsuari)+",'"+this.nombre+"','"+this.apellido+"','"+String.valueOf(this.rol)+"','"+this.correo+"','"+this.contrasenya+"');";
+		return "insert into usuario values("+String.valueOf(Idusuari)+",'"+this.nombre+"','"+this.apellido+"','"+String.valueOf(this.rol)+"','"+this.correo+"','"+this.contrasenya+"');";
 	}
 
 

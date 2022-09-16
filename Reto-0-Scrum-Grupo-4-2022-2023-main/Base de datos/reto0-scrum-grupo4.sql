@@ -37,7 +37,7 @@ Encendido boolean not null default false
 );
 
 CREATE TABLE Aula(
-Id_aulacalefacionAula int  primary key auto_increment ,
+Id_Aula int  primary key auto_increment ,
 Alarma_de_Incendios int,
 Calefacion int,
 constraint fk_Alarma_de_Incendios foreign key (Alarma_de_Incendios) references Alarma_de_Incendios(Id_Alarma),
