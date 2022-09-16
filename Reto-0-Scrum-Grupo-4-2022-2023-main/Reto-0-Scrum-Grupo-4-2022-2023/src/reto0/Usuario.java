@@ -33,7 +33,7 @@ public class Usuario {
 	
 	
 	public Usuario(int idUsuari, String nombre, String apellidos, Permisos rol, String correo, String contrasenya) {
-		super();
+		
 		this.idUsuari = idUsuari;
 		this.nombre = nombre;
 		this.apellido = apellidos;
@@ -41,10 +41,16 @@ public class Usuario {
 		this.correo = correo;
 		this.contrasenya = contrasenya;
 	}
+	
+	public Usuario(String nombre,String contrasenya) {
+		this.nombre = nombre;
+		this.contrasenya = contrasenya;
+	}
 
 
 	public int getIdUsuari() {
 		return idUsuari;
+		
 	}
 
 

@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import back.objektuak.Erabiltzailea;
+
 
 import java.awt.CardLayout;
 import javax.swing.JTabbedPane;
@@ -110,10 +110,11 @@ public class Inicio extends JFrame {
 			JOptionPane.showMessageDialog(null, "Hay que completar todos los campos.");
 		}
 		
-				Usuario persona = new Usuario(Base_de_Datos.consultar_Ultimo_Usuario(), nombre, contrasenya,null,null, null);
+				Usuario persona = new Usuario(nombre, contrasenya);
 				
 				if (persona.login()) {
 					JOptionPane.showMessageDialog(null, "El usuario se ha logeado correctamente.");
+					
 				}
 				
 				
