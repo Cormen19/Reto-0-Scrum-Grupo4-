@@ -213,5 +213,55 @@ public class Base_de_Datos {
 		}
 		return numero;
 	}
+
+	public static boolean CambioEstadoAlarma(int indice, boolean b) {
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(url,"root",Contra);
+		
+			Statement s = conn.createStatement();
+			String query=String.format("Update Alarma_de_incendios set Encendido = %b where Id_Alarma = '%d' ;",b,indice+1);
+			s.executeUpdate(query);
+			
+			s.close();
+			conn.close();
+		
+		}catch(SQLException sql) {
+			System.out.println("Error al conectar a la base de datos ");
+			return false;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
+		return false;
+	}
+	
+	public static boolean CambioEstadoCalefaccion(int indice, boolean b) {
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(url,"root",Contra);
+		
+			Statement s = conn.createStatement();
+			String query=String.format("Update Calefaccion set Encendido = %b where Id_Calefaccion = '%d' ;",b,indice+1);
+			s.executeUpdate(query);
+			
+			s.close();
+			conn.close();
+		
+		}catch(SQLException sql) {
+			System.out.println("Error al conectar a la base de datos ");
+			return false;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
+		return false;
+	}
 	
 }
