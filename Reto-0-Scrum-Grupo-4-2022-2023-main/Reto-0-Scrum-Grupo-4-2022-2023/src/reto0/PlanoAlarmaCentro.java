@@ -1,3 +1,4 @@
+package reto0;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
