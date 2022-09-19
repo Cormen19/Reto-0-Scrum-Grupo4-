@@ -185,11 +185,7 @@ public class PlanoAlarmaCentro extends JFrame {
 		btn23.setBounds(126, 94, 18, 16);
 		contentPane.add(btn23);
 		
-<<<<<<< HEAD
-
-=======
-		
->>>>>>> 01a152e8f53f2aa736cd41512f9750c9a68730bd
+ 
 		Botones.add(btn1);
 		Botones.add(btn2);
 		Botones.add(btn3);
