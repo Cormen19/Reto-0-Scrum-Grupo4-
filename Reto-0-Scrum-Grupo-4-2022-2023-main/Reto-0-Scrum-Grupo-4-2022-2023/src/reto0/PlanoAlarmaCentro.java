@@ -831,7 +831,7 @@ public class PlanoAlarmaCentro extends JFrame {
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(PlanoAlarmaCentro.class.getResource("/reto0/Imagenes/PlanoCentro.png")));
+		lblNewLabel.setIcon(new ImageIcon(PlanoAlarmaCentro.class.getResource("src\\reto0\\Imagenes\\PlanoCentro.png")));
 		lblNewLabel.setBackground(new Color(240, 240, 240));
 		lblNewLabel.setBounds(0, 0, 766, 725);
 		contentPane.add(lblNewLabel);
