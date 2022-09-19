@@ -80,7 +80,7 @@ public class Base_de_Datos {
 		
 			Statement s = conn.createStatement();
 			ResultSet rs = s.executeQuery("Select * "
-									+ "From calefaccion;");
+									+ "From alarma_de_incendios;");
 
 			while(rs.next()) {	
 				AlarmadeIncendios auxAlarma = new AlarmadeIncendios(rs.getInt("Id_Alarma"),rs.getBoolean("Encendido"));

@@ -575,7 +575,7 @@ public class PlanoCentro extends JFrame {
 			
 		
 		PlanoCentro = new JLabel("");
-		PlanoCentro.setIcon(new ImageIcon("C:\\Users\\in2dm3\\Desktop\\Retos\\Reto-0-Scrum-Grupo4-\\Reto-0-Scrum-Grupo-4-2022-2023-main\\Reto-0-Scrum-Grupo-4-2022-2023\\src\\reto0\\Imagenes\\PlanoCentro.png"));
+		PlanoCentro.setIcon(new ImageIcon("src\\reto0\\Imagenes\\PlanoCentro.png"));
 		PlanoCentro.setBounds(0, 57, 753, 734);
 		contentPane.add(PlanoCentro);
 		
