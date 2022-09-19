@@ -73,6 +73,7 @@ public class PlanoCentro extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		//Creamos todos los botones
 		Boton3 = new JButton("");
 		Boton3.setBackground(Color.RED);
 		Boton3.setBounds(208, 344, 19, 19);
@@ -89,7 +90,7 @@ public class PlanoCentro extends JFrame {
 		Boton1.setBounds(68, 370, 19, 19);
 		
 		contentPane.add(Boton1);
-		
+		//Añadimos un metodo para que cuando pulsamos en el boton cambie de color de rojo a verde o al reves 
 		Boton1.addActionListener(new ActionListener(){
         int count = 1;
             public void actionPerformed (ActionEvent e) {
@@ -575,12 +576,13 @@ public class PlanoCentro extends JFrame {
 		
 		
 			
-		
+		//Usamos una etiqueta y en ella ponemos la imagen del plano del centro
 		PlanoCentro = new JLabel("");
 		PlanoCentro.setIcon(new ImageIcon("C:\\Users\\in2dm3\\Desktop\\Retos\\Reto-0-Scrum-Grupo4-\\Reto-0-Scrum-Grupo-4-2022-2023-main\\Reto-0-Scrum-Grupo-4-2022-2023\\src\\reto0\\Imagenes\\PlanoCentro.png"));
 		PlanoCentro.setBounds(0, 57, 753, 734);
 		contentPane.add(PlanoCentro);
 		
+		//Ponemos un titulo al plano 
 		JLabel TituloPlano = new JLabel("Plano calefaccion centro");
 		TituloPlano.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		TituloPlano.setBounds(249, 11, 321, 57);
