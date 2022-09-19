@@ -1,5 +1,5 @@
 package reto0;
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -7,20 +7,17 @@ import javax.swing.border.EmptyBorder;
 
 
 
-import java.awt.CardLayout;
+
 import javax.swing.JTabbedPane;
-import java.awt.FlowLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
 
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,8 +29,6 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class Inicio extends JFrame {
 
@@ -55,6 +50,7 @@ public class Inicio extends JFrame {
 		frame.setVisible(true);
 		alarmadeIncendios = Base_de_Datos.cargarAlarmasdeIncendios();
 		calefaccion = Base_de_Datos.cargarCalefacion();
+		
 	}
 
 	/**
