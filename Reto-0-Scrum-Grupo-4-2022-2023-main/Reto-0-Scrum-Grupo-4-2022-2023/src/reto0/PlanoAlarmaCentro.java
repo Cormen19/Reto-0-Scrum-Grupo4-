@@ -16,6 +16,8 @@ import java.awt.Font;
 public class PlanoAlarmaCentro extends JFrame {
 
 	private JPanel contentPane;
+	int count = 1;
+	
 	int count1 = 0;
 	int count2 = 0;
 	int count3 = 0;
@@ -40,7 +42,8 @@ public class PlanoAlarmaCentro extends JFrame {
 	int count22 = 0;
 	int count23 = 0; 
 	
-
+	public ArrayList<JButton> Botones;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -60,6 +63,11 @@ public class PlanoAlarmaCentro extends JFrame {
 	/**
 	 	*Creamos y centramos el plano al centro
 	 */
+	
+	public void cambiar() {
+		
+	}
+	
 	public PlanoAlarmaCentro() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 763, 754);
@@ -68,7 +76,6 @@ public class PlanoAlarmaCentro extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
@@ -762,6 +769,46 @@ public class PlanoAlarmaCentro extends JFrame {
 		});
 		btn23.setBounds(126, 94, 18, 16);
 		contentPane.add(btn23);
+		
+
+		Botones.add(btn1, count1);
+		Botones.add(btn2);
+		Botones.add(btn3);
+		Botones.add(btn4);
+		Botones.add(btn5);
+		Botones.add(btn6);
+		Botones.add(btn7);
+		Botones.add(btn8);
+		Botones.add(btn9);
+		Botones.add(btn10);
+		Botones.add(btn11);
+		Botones.add(btn12);
+		Botones.add(btn13);
+		Botones.add(btn14);
+		Botones.add(btn15);
+		Botones.add(btn16);
+		Botones.add(btn17);
+		Botones.add(btn18);
+		Botones.add(btn19);
+		Botones.add(btn20);
+		Botones.add(btn21);
+		Botones.add(btn22);
+		Botones.add(btn23);
+		
+		for(JButton btn:Botones) {
+			btn.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+	                if(count==1){
+	                	btn.setBackground(Color.green);
+	                     count = 2;
+	                }
+	                else if(count==2){
+	                	btn.setBackground(Color.red);
+	                     count = 1;
+	                }
+				}
+			});
+		}
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
