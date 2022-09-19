@@ -81,7 +81,7 @@ public class Inicio extends JFrame {
 		Login.add(txtUsuario, "cell 2 1,growx");
 		txtUsuario.setColumns(10);
 		
-		JLabel LabelContrasenya = new JLabel("Contrasenya:");
+		JLabel LabelContrasenya = new JLabel("Contraseña:");
 		Login.add(LabelContrasenya, "cell 1 2,alignx trailing");
 		
 		passwordField = new JPasswordField();

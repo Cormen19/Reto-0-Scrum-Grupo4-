@@ -52,7 +52,7 @@ public class Base_de_Datos {
 									+ "From calefaccion;");
 
 			while(rs.next()) {	
-				Calefaccion auxCalefaccion = new Calefaccion(rs.getInt("Id_Calefacion"),rs.getBoolean("Encendido"));
+				Calefaccion auxCalefaccion = new Calefaccion(rs.getInt("Id_Calefaccion"),rs.getBoolean("Encendido"));
 				calefaccion.add(auxCalefaccion);
 							}	
 			s.close();
