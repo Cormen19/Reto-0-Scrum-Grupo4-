@@ -38,9 +38,9 @@ Encendido boolean not null default false
 CREATE TABLE Aula(
 Id_Aula int  primary key auto_increment ,
 Alarma_de_Incendios int,
-Calefacion int,
+Calefaccion int,
 constraint fk_Alarma_de_Incendios foreign key (Alarma_de_Incendios) references Alarma_de_Incendios(Id_Alarma),
-constraint fk_Calefacion foreign key (Calefacion) references Calefaccion(Id_Calefacion)
+constraint fk_Calefaccion foreign key (Calefaccion) references Calefaccion(Id_Calefaccion)
 );
 
 CREATE TABLE Monitoriza(
