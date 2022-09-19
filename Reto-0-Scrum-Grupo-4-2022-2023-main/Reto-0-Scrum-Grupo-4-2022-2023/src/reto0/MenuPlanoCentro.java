@@ -45,7 +45,7 @@ public class MenuPlanoCentro extends JFrame {
 		JButton btnAlarmaDeIncendios = new JButton("Alarma de Incendios");
 		btnAlarmaDeIncendios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//PlanoAlarmasdeIncendios.main(null);
+				PlanoAlarmaCentro.main(null);
 				dispose();
 			}
 		});
