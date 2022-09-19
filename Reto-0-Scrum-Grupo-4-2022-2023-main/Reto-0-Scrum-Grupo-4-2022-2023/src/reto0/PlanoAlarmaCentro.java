@@ -69,6 +69,7 @@ public class PlanoAlarmaCentro extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		JButton btn1 = new JButton("");
@@ -127,9 +128,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn2.setBackground(Color.red);
                      count2 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn2.setBounds(126, 224, 18, 16);
@@ -159,9 +157,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count3==2){
                 	btn3.setBackground(Color.red);
                      count3 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -193,9 +188,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn4.setBackground(Color.red);
                      count4 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn4.setBounds(312, 351, 18, 16);
@@ -225,9 +217,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count5==2){
                 	btn5.setBackground(Color.red);
                      count5 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -259,9 +248,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn6.setBackground(Color.red);
                      count6 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn6.setBounds(560, 351, 18, 16);
@@ -291,9 +277,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count7==2){
                 	btn7.setBackground(Color.red);
                      count7 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -325,9 +308,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn8.setBackground(Color.red);
                      count8 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn8.setBounds(312, 511, 18, 16);
@@ -357,9 +337,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count9==2){
                 	btn9.setBackground(Color.red);
                      count9 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -391,9 +368,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn10.setBackground(Color.red);
                      count10 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn10.setBounds(365, 559, 18, 16);
@@ -423,9 +397,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count11==2){
                 	btn11.setBackground(Color.red);
                      count11 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -457,9 +428,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn12.setBackground(Color.red);
                      count11 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn12.setBounds(505, 571, 18, 16);
@@ -489,9 +457,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count13==2){
                 	btn13.setBackground(Color.red);
                      count13 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -523,9 +488,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn14.setBackground(Color.red);
                      count14 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn14.setBounds(636, 571, 18, 16);
@@ -555,9 +517,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count15==2){
                 	btn15.setBackground(Color.red);
                      count15 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -589,9 +548,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn16.setBackground(Color.red);
                      count16 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn16.setBounds(207, 597, 18, 16);
@@ -621,9 +577,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count17==2){
                 	btn17.setBackground(Color.red);
                      count17 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -655,9 +608,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn18.setBackground(Color.red);
                      count18 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn18.setBounds(365, 668, 18, 16);
@@ -687,9 +637,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count19==2){
                 	btn19.setBackground(Color.red);
                      count19 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -721,9 +668,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn20.setBackground(Color.red);
                      count20 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn20.setBounds(518, 668, 18, 16);
@@ -753,9 +697,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count21==2){
                 	btn21.setBackground(Color.red);
                      count21 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
@@ -787,9 +728,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 	btn22.setBackground(Color.red);
                      count22 = 1;
                 }
-                else {
-                	
-                }
 			}
 		});
 		btn22.setBounds(663, 649, 18, 16);
@@ -819,9 +757,6 @@ public class PlanoAlarmaCentro extends JFrame {
                 else if(count23==2){
                 	btn23.setBackground(Color.red);
                      count23 = 1;
-                }
-                else {
-                	
                 }
 			}
 		});
