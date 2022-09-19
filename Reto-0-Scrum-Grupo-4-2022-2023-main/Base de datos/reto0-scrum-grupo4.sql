@@ -31,7 +31,7 @@ Encendido boolean not null default false
 );
 
 CREATE TABLE Calefaccion(
-Id_Calefacion int primary key auto_increment,
+Id_Calefaccion int primary key auto_increment,
 Encendido boolean not null default false
 );
 

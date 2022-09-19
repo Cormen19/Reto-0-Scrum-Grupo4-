@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -19,44 +21,39 @@ import java.awt.Font;
 public class PlanoCentro extends JFrame {
 	
 	public JPanel contentPane;
-	public static JButton Boton1;
-	public static JButton Boton2;
+	public static JButton Boton1 = new JButton();
+	public static JButton Boton2= new JButton();
 	public static JLabel PlanoCentro;
-	public JButton Boton3;
-	private JButton Boton4;
-	private JButton Boton5;
-	private JButton Boton6;
-	private JButton Boton8;
-	private JButton Boton7;
-	private JButton Boton9;
-	private JButton Boton10;
-	private JButton Boton11;
-	private JButton Boton12;
-	private JButton Boton13;
-	private JButton Boton14;
-	private JButton Boton15;
-	private JButton Boton16;
-	private JButton Boton17;
-	private JButton Boton18;
-	private JButton Boton19;
-	private JButton Boton20;
-	private JButton Boton21;
-	private JButton Boton22;
-	private JButton Boton23;
+	public static JButton Boton3= new JButton(); 
+	private static JButton Boton4= new JButton();
+	private static JButton Boton5= new JButton();
+	private static JButton Boton6= new JButton();
+	private static JButton Boton8= new JButton();
+	private static JButton Boton7= new JButton();
+	private static JButton Boton9= new JButton();
+	private static JButton Boton10= new JButton();
+	private static JButton Boton11= new JButton();
+	private static JButton Boton12= new JButton();
+	private static JButton Boton13= new JButton();
+	private static JButton Boton14= new JButton();
+	private static JButton Boton15= new JButton();
+	private static JButton Boton16= new JButton();
+	private static JButton Boton17;
+	private static JButton Boton18;
+	private static JButton Boton19;
+	private static JButton Boton20;
+	private static JButton Boton21;
+	private static JButton Boton22;
+	private static JButton Boton23;
+	private ArrayList<JButton> Botones= new ArrayList<JButton>();
+	private ArrayList<Boolean> encendido = new ArrayList<Boolean>();
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PlanoCentro frame = new PlanoCentro();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		PlanoCentro frame = new PlanoCentro();
+		frame.setVisible(true);
+	
 	}
 
 	/**
@@ -91,51 +88,7 @@ public class PlanoCentro extends JFrame {
 		
 		contentPane.add(Boton1);
 		//Añadimos un metodo para que cuando pulsamos en el boton cambie de color de rojo a verde o al reves 
-		Boton1.addActionListener(new ActionListener(){
-        int count = 1;
-            public void actionPerformed (ActionEvent e) {
-
-                if(count==1){
-                    Boton1.setBackground(Color.green);
-                     count = 2;
-                }
-                else if(count==2){
-                    Boton1.setBackground(Color.red);
-                     count = 1;
-                }
-              }
-        
-    });
-		Boton2.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton2.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton2.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		Boton3.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton3.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton3.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
+		
 		
 		Boton4 = new JButton("");
 		Boton4.setBackground(Color.RED);
@@ -237,343 +190,6 @@ public class PlanoCentro extends JFrame {
 		Boton23.setBounds(115, 157, 19, 19);
 		contentPane.add(Boton23);
 		
-		Boton3.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton3.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton3.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton4.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton4.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton4.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton5.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton5.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton5.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton6.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton6.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton6.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton7.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton7.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton7.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton8.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton8.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton8.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton9.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton9.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton9.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton10.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton10.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton10.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton11.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton11.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton11.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton12.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton12.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton12.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton13.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton13.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton13.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton14.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton14.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton14.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton15.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton15.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton15.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton16.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton16.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton16.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton17.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton17.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton17.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton18.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton18.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton18.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton19.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton19.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton19.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton20.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton20.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton20.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton21.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton21.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton21.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton22.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton22.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton22.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		Boton23.addActionListener(new ActionListener(){
-	        int count = 1;
-	            public void actionPerformed (ActionEvent e) {
-
-	                if(count==1){
-	                    Boton23.setBackground(Color.green);
-	                     count = 2;
-	                }
-	                else if(count==2){
-	                    Boton23.setBackground(Color.red);
-	                     count = 1;
-	                }
-	              }
-	        
-	    });
-		
-		
 		
 			
 		//Usamos una etiqueta y en ella ponemos la imagen del plano del centro
@@ -587,5 +203,57 @@ public class PlanoCentro extends JFrame {
 		TituloPlano.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		TituloPlano.setBounds(249, 11, 321, 57);
 		contentPane.add(TituloPlano);
-}	
+		
+		Botones.add(Boton1);
+		Botones.add(Boton2);
+		Botones.add(Boton3);
+		Botones.add(Boton4);
+		Botones.add(Boton5);
+		Botones.add(Boton6);
+		Botones.add(Boton7);
+		Botones.add(Boton8);
+		Botones.add(Boton9);
+		Botones.add(Boton10);
+		Botones.add(Boton11);
+		Botones.add(Boton12);
+		Botones.add(Boton13);
+		Botones.add(Boton14);
+		Botones.add(Boton15);
+		Botones.add(Boton16);
+		Botones.add(Boton17);
+		Botones.add(Boton18);
+		Botones.add(Boton19);
+		Botones.add(Boton20);
+		Botones.add(Boton21);
+		Botones.add(Boton22);
+		Botones.add(Boton23);
+		
+		for(int i = 0 ; i<=Inicio.calefaccion.size()-1;i++) {
+			encendido.add((Inicio.calefaccion.get(i)).isEncendido());
+			if(encendido.get(i)) {
+				Botones.get(i).setBackground(Color.green);
+			}else {
+				Botones.get(i).setBackground(Color.red);
+			}
+		}
+		for(int i=0 ;i<=Botones.size()-1;i++) {
+			final int indice = i;
+			Botones.get(i).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				
+	                if(encendido.get(indice)){
+	                	Botones.get(indice).setBackground(Color.red);
+	                	encendido.set(indice, false);
+	                	Base_de_Datos.CambioEstadoCalefaccion(indice,false);
+	                }
+	                else {
+	                	Botones.get(indice).setBackground(Color.green);	                
+	                	encendido.set(indice, true);
+	                	Base_de_Datos.CambioEstadoCalefaccion(indice,true);
+	             
+	                }
+				}
+			});
+		}
+	}	
 }
