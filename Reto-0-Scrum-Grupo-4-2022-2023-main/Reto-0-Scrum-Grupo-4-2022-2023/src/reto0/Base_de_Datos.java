@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Base_de_Datos {
 	static Scanner teclado = new Scanner(System.in);
 	final static String url = "jdbc:mysql://localhost:33060/reto0-scrum-grupo4";
-	final static String Contra= "1234";
+	final static String Contra= "elorrieta";
 	/*Recoge los datos de las calefacciones y las carga en memoria en un arraylist*/
 	public static ArrayList<Calefaccion> cargarCalefacion(){
 		 ArrayList<Calefaccion> calefaccion = new ArrayList<Calefaccion>();
