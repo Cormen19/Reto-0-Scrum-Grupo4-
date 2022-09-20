@@ -252,18 +252,19 @@ public class PlanoCentro extends JFrame {
 		}
 		for(int i=0 ;i<=Botones.size()-1;i++) {
 			final int indice = i;
-			Botones.get(i).addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+			Botones.get(i).addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
 				
 	                if(encendido.get(indice)){
 	                	Botones.get(indice).setBackground(Color.red);
 	                	encendido.set(indice, false);
-	                	Base_de_Datos.CambioEstadoCalefaccion(indice,false);
+	                	Base_de_Datos.CambioEstadoAlarma(indice,false);
 	                }
 	                else {
 	                	Botones.get(indice).setBackground(Color.green);	                
 	                	encendido.set(indice, true);
-	                	Base_de_Datos.CambioEstadoCalefaccion(indice,true);
+	                	Base_de_Datos.CambioEstadoAlarma(indice,true);
 	             
 	                }
 				}

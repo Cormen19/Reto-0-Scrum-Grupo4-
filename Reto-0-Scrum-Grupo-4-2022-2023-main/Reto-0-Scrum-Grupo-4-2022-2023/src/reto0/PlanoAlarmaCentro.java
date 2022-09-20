@@ -231,8 +231,9 @@ public class PlanoAlarmaCentro extends JFrame {
 		}
 		for(int i=0 ;i<=Botones.size()-1;i++) {
 			final int indice = i;
-			Botones.get(i).addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+			Botones.get(i).addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
 				
 	                if(encendido.get(indice)){
 	                	Botones.get(indice).setBackground(Color.red);
