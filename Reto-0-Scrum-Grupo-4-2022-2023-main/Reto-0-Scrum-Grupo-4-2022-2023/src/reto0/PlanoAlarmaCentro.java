@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -285,14 +284,11 @@ public class PlanoAlarmaCentro extends JFrame {
 				
 	                if(Inicio.calefaccion.get(indice).isEncendido()){
 	                	Botones.get(indice).setBackground(Color.red);
-	                	Inicio.calefaccion.get(indice).setEncendido(false);
-	                	Base_de_Datos.CambioEstado("alarma",indice,false);
+	                	Inicio.calefaccion.get(indice).setEncendido(false);                	
 	                }
 	                else {
 	                	Botones.get(indice).setBackground(Color.green);	                
-	                	Inicio.calefaccion.get(indice).setEncendido(true);
-	                	Base_de_Datos.CambioEstado("alarma",indice,true);
-	             
+	                	Inicio.calefaccion.get(indice).setEncendido(true);            
 	                }
 				}
 			});

@@ -1,6 +1,7 @@
 package reto0;
 
-
+/*La Clase Usuario nos sirve para centralizar todos los datos de los usuarios asi como el proceso 
+ * del login y el registro*/
 public class Usuario {
 
 	private int Idusuari;
@@ -17,13 +18,10 @@ public class Usuario {
 	}
 	private Permisos rol ;
 	
-
 	private String correo;
 	
 	private String contrasenya;
 
-
-	
 	
 	public Usuario(int Idusuari, String nombre, String apellidos, Permisos rol, String correo, String contrasenya) {
 		
@@ -41,77 +39,6 @@ public class Usuario {
 	}
 
 
-	public int getIdUsuari() {
-		return Idusuari;
-		
-	}
-
-
-	public void setIdUsuari(int Idusuari) {
-		this.Idusuari = Idusuari;
-	}
-
-
-	public Permisos getRol() {
-		return rol;
-	}
-
-
-	public void setRol(Permisos rol) {
-		this.rol = rol;
-	}
-
-
-	public String getCorreo() {
-		return correo;
-	}
-
-
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-
-
-	public String getContrasenya() {
-		return contrasenya;
-	}
-
-
-	public void setContrasenya(String contrasenya) {
-		this.contrasenya = contrasenya;
-	}
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	
-
-	public String getApellidos() {
-		return apellido;
-	}
-
-	
-	public void setApellidos(String apellidos) {
-		this.apellido = apellidos;
-	}
-
-	public Permisos getFuncion() {
-		return rol;
-	}
-
-	public void setFuncion(Permisos funcion) {
-		this.rol = funcion;
-		
-	}
-
-	
 
 	
 	@Override

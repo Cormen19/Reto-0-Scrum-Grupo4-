@@ -30,7 +30,7 @@ public class Base_de_Datos {
 			while(rs.next()) {	
 				Calefaccion auxCalefaccion = new Calefaccion(rs.getInt("Id_Calefaccion"),rs.getBoolean("Encendido"));
 				calefaccion.add(auxCalefaccion);
-							}	
+			}	
 			s.close();
 			rs.close();
 			conn.close();
@@ -199,19 +199,13 @@ public class Base_de_Datos {
 	/*Esta funcion sirve para  cambiar el estado de uno de los elementos de la base de datos
 	 * Recibe un string que es el nombre del objeto al que se le va a cambiar el estado , el numero de registro que sea y true o false
 	 * Y se guarda el cambio en la base de datos*/
-	public static boolean CambioEstado(String string ,int indice, boolean b) {
-		String query= null;
+	public static boolean CambioEstado(String query) {
+	
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(url,"root",Contra);
 		
-			Statement s = conn.createStatement();
-			if(string.equals("alarma")) {
-				query=String.format("Update Alarma_de_incendios set Encendido = %b where Id_Alarma = '%d' ;",b,indice+1);
-			}else if(string.equals("calefaccion")) {
-				query=String.format("Update Calefaccion set Encendido = %b where Id_Calefaccion = '%d' ;",b,indice+1);
-			}
-			 
+			Statement s = conn.createStatement();	 
 			s.executeUpdate(query);
 			
 			s.close();

@@ -310,13 +310,10 @@ public class PlanoCalefaccionCentro extends JFrame {
 	                if(Inicio.calefaccion.get(indice).isEncendido()){
 	                	Botones.get(indice).setBackground(Color.red);
 	                	Inicio.calefaccion.get(indice).setEncendido(false);
-	                	Base_de_Datos.CambioEstado("calefaccion",indice,false);
 	                }
 	                else {
 	                	Botones.get(indice).setBackground(Color.green);	                
-	                	Inicio.calefaccion.get(indice).setEncendido(true);
-	                	Base_de_Datos.CambioEstado("calefaccion",indice,true);
-	             
+	                	Inicio.calefaccion.get(indice).setEncendido(true);   
 	                }
 				}
 			});
