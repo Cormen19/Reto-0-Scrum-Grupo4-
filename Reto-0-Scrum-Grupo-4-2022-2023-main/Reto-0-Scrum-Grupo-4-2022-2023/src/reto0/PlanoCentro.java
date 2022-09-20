@@ -46,7 +46,7 @@ public class PlanoCentro extends JFrame {
 	private static JButton Boton22;
 	private static JButton Boton23;
 	private ArrayList<JButton> Botones= new ArrayList<JButton>();
-	private ArrayList<Boolean> encendido = new ArrayList<Boolean>();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -91,11 +91,11 @@ public class PlanoCentro extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				boolean todosapagados= true;
-				for(int i =0;i<encendido.size();i++) {
-					if(encendido.get(i)) {
+				for(int i =0;i<Inicio.calefaccion.size();i++) {
+					if(Inicio.calefaccion.get(i).isEncendido()) {
 						todosapagados = false;
 						Botones.get(i).setBackground(Color.red);
-						encendido.set(i, false);
+						Inicio.calefaccion.get(i).setEncendido(false);
 					}
 				}
 				if(!todosapagados) {
@@ -118,11 +118,11 @@ public class PlanoCentro extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				boolean todosencendidos= true;
-				for(int i =0;i<encendido.size();i++) {
-					if(!encendido.get(i)) {
+				for(int i =0;i<Inicio.calefaccion.size();i++) {
+					if(!Inicio.calefaccion.get(i).isEncendido()) {
 						todosencendidos = false;
 						Botones.get(i).setBackground(Color.green);
-						encendido.set(i, true);
+						Inicio.calefaccion.get(i).setEncendido(true);
 					}
 				}
 				if(todosencendidos) {
@@ -295,8 +295,7 @@ public class PlanoCentro extends JFrame {
 		Botones.add(Boton23);
 		
 		for(int i = 0 ; i<=Inicio.calefaccion.size()-1;i++) {
-			encendido.add((Inicio.calefaccion.get(i)).isEncendido());
-			if(encendido.get(i)) {
+			if(Inicio.calefaccion.get(i).isEncendido()) {
 				Botones.get(i).setBackground(Color.green);
 			}else {
 				Botones.get(i).setBackground(Color.red);
@@ -308,14 +307,14 @@ public class PlanoCentro extends JFrame {
 				@Override
 				public void mouseClicked(MouseEvent e) {
 				
-	                if(encendido.get(indice)){
+	                if(Inicio.calefaccion.get(indice).isEncendido()){
 	                	Botones.get(indice).setBackground(Color.red);
-	                	encendido.set(indice, false);
+	                	Inicio.calefaccion.get(indice).setEncendido(false);
 	                	Base_de_Datos.CambioEstado("calefaccion",indice,false);
 	                }
 	                else {
 	                	Botones.get(indice).setBackground(Color.green);	                
-	                	encendido.set(indice, true);
+	                	Inicio.calefaccion.get(indice).setEncendido(true);
 	                	Base_de_Datos.CambioEstado("calefaccion",indice,true);
 	             
 	                }
