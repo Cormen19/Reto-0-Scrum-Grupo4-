@@ -21,15 +21,14 @@ public class Calefaccion {
 	}
 
 	public void setEncendido(boolean encendido) {
+		if(this.encendido!=encendido) {
 			this.encendido=encendido;
+			
+		}
+		
 	}
-	
 	public void actualizarEstado() {
 		Base_de_Datos.CambioEstado(this.toString());
-	}
-	
-	public static void actualizarEstadoTodo(boolean encendido) {
-		Base_de_Datos.CambioEstado(String.format("Update Calefaccion set Encendido = %b ;",encendido));
 	}
 	@Override
 	public String toString() {

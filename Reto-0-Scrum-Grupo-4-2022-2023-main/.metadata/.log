@@ -687,3 +687,42 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:57:28.016
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/windowbuilder/latest/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2022-09-20 20:57:30.108
+!MESSAGE No repository found at https://download.eclipse.org/eclipse/updates/4.23-P-builds.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:57:31.481
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/technology/epp/packages/2021-06/202106121200, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:57:35.079
+!MESSAGE Using unsafe http transport to retrieve http://rherrmann.github.io/com.codeaffine.archive/repository/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:57:37.842
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/releases/2021-06/202106161001/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:57:44.530
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/oomph/updates/milestone/latest, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:57:44.932
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/oomph/drops/release/1.26.0/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:57:56.125
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/windowbuilder/latest/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:57:58.724
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/technology/epp/packages/2021-06/202106121200, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:58:01.080
+!MESSAGE Using unsafe http transport to retrieve http://rherrmann.github.io/com.codeaffine.archive/repository/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:58:03.630
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/releases/2021-06/202106161001/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:58:08.662
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/oomph/updates/milestone/latest, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-09-20 20:58:09.061
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/oomph/drops/release/1.26.0/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.

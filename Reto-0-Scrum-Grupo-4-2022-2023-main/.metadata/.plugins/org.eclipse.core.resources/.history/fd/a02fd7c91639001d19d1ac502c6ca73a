@@ -291,7 +291,7 @@ public class PlanoAlarmaCentro extends JFrame {
 	                	Inicio.alarmadeIncendios.get(indice).setEncendido(true);
 	                	Inicio.alarmadeIncendios.get(indice).actualizarEstado();           
 	                }
-				}
+		}
 			});
 		}
 		

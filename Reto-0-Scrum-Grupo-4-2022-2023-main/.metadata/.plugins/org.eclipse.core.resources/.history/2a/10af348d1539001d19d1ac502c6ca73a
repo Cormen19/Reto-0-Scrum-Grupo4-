@@ -21,14 +21,14 @@ public class AlarmadeIncendios {
 	}
 	
 	public void setEncendido(boolean encendido) {
-		this.encendido=encendido;	
+		if(this.encendido!=encendido) {
+			this.encendido=encendido;
+			Base_de_Datos.CambioEstado(this.toString());
+		}	
 	}
 	
 	public void actualizarEstado() {
 		Base_de_Datos.CambioEstado(this.toString());
-	}
-	public static void actualizarEstadoTodo(boolean encendido) {
-		Base_de_Datos.CambioEstado(String.format("Update Alarma_de_incendios set Encendido = %b ;",encendido));
 	}
 
 	@Override

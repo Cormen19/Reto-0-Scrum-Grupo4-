@@ -295,12 +295,14 @@ public class PlanoCalefaccionCentro extends JFrame {
 		Botones.add(Boton23);
 		
 		for(int i = 0 ; i<=Inicio.calefaccion.size()-1;i++) {
-			final int indice = i;
 			if(Inicio.calefaccion.get(i).isEncendido()) {
 				Botones.get(i).setBackground(Color.green);
 			}else {
 				Botones.get(i).setBackground(Color.red);
 			}
+		}
+		for(int i=0 ;i<=Botones.size()-1;i++) {
+			final int indice = i;
 			Botones.get(i).addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
@@ -318,6 +320,5 @@ public class PlanoCalefaccionCentro extends JFrame {
 				}
 			});
 		}
-		
 	}	
 }

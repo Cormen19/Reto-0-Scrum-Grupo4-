@@ -66,7 +66,7 @@ public class PlanoAlarmaCentro extends JFrame {
 				}
 				if(!todosapagados) {
 					JOptionPane.showMessageDialog(null, "Ya se han  apagado todas  las alarmas");
-					AlarmadeIncendios.actualizarEstadoTodo(false);
+					Base_de_Datos.EncenderoApagarTodo("alarma",false);
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya estan apagadas las alarmas");
 				}
@@ -91,7 +91,7 @@ public class PlanoAlarmaCentro extends JFrame {
 					JOptionPane.showMessageDialog(null, "Ya estaban todas las alarmas encendidas");
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya se han encendido todas las alarmas");
-					AlarmadeIncendios.actualizarEstadoTodo(true);
+					Base_de_Datos.EncenderoApagarTodo("alarma",true);
 						
 					
 				
@@ -269,19 +269,20 @@ public class PlanoAlarmaCentro extends JFrame {
 		
 		
 		for(int i = 0 ; i<=Inicio.alarmadeIncendios.size()-1;i++) {
-			final int indice = i;
+	
 			if(Inicio.alarmadeIncendios.get(i).getEncendido()) {
 				Botones.get(i).setBackground(Color.green);
 			}else {
 				Botones.get(i).setBackground(Color.red);
 			}
+		}
+		for(int i=0 ;i<=Botones.size()-1;i++) {
+			final int indice = i;
 			Botones.get(i).addMouseListener(new MouseAdapter() {
-				
-				
+				@Override
 				public void mouseClicked(MouseEvent e) {
-					
-					
-	                if(Inicio.alarmadeIncendios.get(indice).getEncendido()){
+				
+	                if(Inicio.alarmadeIncendios.get(indice).isEncendido()){
 	                	Botones.get(indice).setBackground(Color.red);
 	                	Inicio.alarmadeIncendios.get(indice).setEncendido(false);  
 	                	Inicio.alarmadeIncendios.get(indice).actualizarEstado();
@@ -294,7 +295,6 @@ public class PlanoAlarmaCentro extends JFrame {
 				}
 			});
 		}
-		
 		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

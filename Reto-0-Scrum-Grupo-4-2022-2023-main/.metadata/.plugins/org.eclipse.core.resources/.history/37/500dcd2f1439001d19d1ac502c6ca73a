@@ -100,7 +100,7 @@ public class PlanoCalefaccionCentro extends JFrame {
 				}
 				if(!todosapagados) {
 					JOptionPane.showMessageDialog(null, "Ya se han  apagado todas  las alarmas");
-					Calefaccion.actualizarEstadoTodo(false);
+					Base_de_Datos.EncenderoApagarTodo("calefaccion",false);
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya estan apagadas las alarmas");
 					
@@ -129,7 +129,7 @@ public class PlanoCalefaccionCentro extends JFrame {
 					JOptionPane.showMessageDialog(null, "Ya estaban todas las alarmas encendidas");
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya se han encendido todas las alarmas");
-					Calefaccion.actualizarEstadoTodo(true);
+					Base_de_Datos.EncenderoApagarTodo("calefaccion",true);
 				}
 			}
 		});
@@ -295,12 +295,14 @@ public class PlanoCalefaccionCentro extends JFrame {
 		Botones.add(Boton23);
 		
 		for(int i = 0 ; i<=Inicio.calefaccion.size()-1;i++) {
-			final int indice = i;
 			if(Inicio.calefaccion.get(i).isEncendido()) {
 				Botones.get(i).setBackground(Color.green);
 			}else {
 				Botones.get(i).setBackground(Color.red);
 			}
+		}
+		for(int i=0 ;i<=Botones.size()-1;i++) {
+			final int indice = i;
 			Botones.get(i).addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
@@ -308,16 +310,13 @@ public class PlanoCalefaccionCentro extends JFrame {
 	                if(Inicio.calefaccion.get(indice).isEncendido()){
 	                	Botones.get(indice).setBackground(Color.red);
 	                	Inicio.calefaccion.get(indice).setEncendido(false);
-	                	Inicio.calefaccion.get(indice).actualizarEstado();
 	                }
 	                else {
 	                	Botones.get(indice).setBackground(Color.green);	                
-	                	Inicio.calefaccion.get(indice).setEncendido(true);
-	                	Inicio.calefaccion.get(indice).actualizarEstado();
+	                	Inicio.calefaccion.get(indice).setEncendido(true);   
 	                }
 				}
 			});
 		}
-		
 	}	
 }
