@@ -64,7 +64,8 @@ public class PlanoCentro extends JFrame {
 		setBounds(100, 100, 810, 841);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
+		setLocationRelativeTo ( null );
+		setResizable(false);
 		
 		
 		setContentPane(contentPane);
