@@ -183,7 +183,6 @@ public class Inicio extends JFrame {
 				} else {
 					if(	persona. registrarse()) {
 						JOptionPane.showMessageDialog(null, "El usuario se ha registrado.");
-						persona. registrarse();
 						entrada.setSelectedIndex(0);
 					}else {
 						JOptionPane.showMessageDialog(null, "Fallo en el registro, hay algun campo vacio");
@@ -215,13 +214,7 @@ public class Inicio extends JFrame {
                         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
  
         Matcher mather = pattern.matcher(email);
- 
-        if (mather.find()) {
-            System.out.println("El email ingresado es válido.");
-            return true;
-        } 
-        return false;
-		
+        return mather.find();	
 	}
 	
 }
