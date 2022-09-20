@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -83,6 +84,56 @@ public class PlanoCentro extends JFrame {
 		});
 		btnAtás.setBounds(505, 106, 152, 40);
 		contentPane.add(btnAtás);
+		
+		JButton btnApagar = new JButton("Apagar Todo");
+		btnApagar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnApagar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				boolean todosapagados= true;
+				for(int i =0;i<encendido.size();i++) {
+					if(encendido.get(i)) {
+						todosapagados = false;
+						Botones.get(i).doClick();
+					}
+				}
+				if(todosapagados) {
+					JOptionPane.showMessageDialog(null, "Ya se han  apagado todas  las alarmas");
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya estan apagadas las alarmas");
+				}
+			}
+		});
+		btnApagar.setBounds(505, 165, 152, 40);
+		contentPane.add(btnApagar);
+		
+		
+
+		
+		JButton btnEncenderTodo = new JButton("Encender Todo");
+		btnEncenderTodo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				boolean todosencendidos= true;
+				for(int i =0;i<encendido.size();i++) {
+					if(!encendido.get(i)) {
+						todosencendidos = false;
+						Botones.get(i).doClick();
+					}
+				}
+				if(todosencendidos) {
+					JOptionPane.showMessageDialog(null, "Ya estaban todas las alarmas encendidas");
+				}else {
+					JOptionPane.showMessageDialog(null, "Ya se han encendido todas las alarmas");
+				
+				}
+			}
+		});
+		btnEncenderTodo.setBounds(505, 228, 152, 40);
+		contentPane.add(btnEncenderTodo);
 		
 		//Creamos todos los botones
 		Boton3 = new JButton("");
