@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -70,6 +72,17 @@ public class PlanoCentro extends JFrame {
 		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		JButton btnAtás = new JButton("Menu Principal");
+		
+		btnAtás.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MenuPlanoCentro.main(null);
+				dispose();
+			}
+		});
+		btnAtás.setBounds(505, 106, 152, 40);
+		contentPane.add(btnAtás);
 		
 		//Creamos todos los botones
 		Boton3 = new JButton("");

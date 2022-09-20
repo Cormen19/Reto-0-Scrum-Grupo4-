@@ -22,7 +22,8 @@ public class MenuPlanoCentro extends JFrame {
 	public static void main(String[] args) {
 		MenuPlanoCentro frame = new MenuPlanoCentro();
 		frame.setVisible(true);
-			
+		Inicio.alarmadeIncendios = Base_de_Datos.cargarAlarmasdeIncendios();
+		Inicio.calefaccion = Base_de_Datos.cargarCalefacion();
 	}
 
 	/**
