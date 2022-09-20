@@ -1,30 +1,20 @@
 package reto0;
 
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-
-
-
 import javax.swing.JTabbedPane;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
-
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import net.miginfocom.swing.MigLayout;
 import reto0.Usuario.Permisos;
-
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JComboBox;
