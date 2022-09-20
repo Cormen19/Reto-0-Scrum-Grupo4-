@@ -50,3 +50,4 @@ constraint pk_Usuario_Aula primary key (Usuario,Aula),
 constraint fk_Usuario foreign key (Usuario) references Usuario(Id_Usuario),
 constraint fk_Aula foreign key (Aula) references Aula(Id_Aula)
 );
+SET SQL_SAFE_UPDATES =0;

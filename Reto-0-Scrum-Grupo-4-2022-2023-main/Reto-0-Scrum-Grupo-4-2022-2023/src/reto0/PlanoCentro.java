@@ -94,13 +94,16 @@ public class PlanoCentro extends JFrame {
 				for(int i =0;i<encendido.size();i++) {
 					if(encendido.get(i)) {
 						todosapagados = false;
-						Botones.get(i).doClick();
+						Botones.get(i).setBackground(Color.red);
+						encendido.set(i, false);
 					}
 				}
-				if(todosapagados) {
+				if(!todosapagados) {
 					JOptionPane.showMessageDialog(null, "Ya se han  apagado todas  las alarmas");
+					Base_de_Datos.EncenderoApagarTodo("calefaccion",false);
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya estan apagadas las alarmas");
+					
 				}
 			}
 		});
@@ -118,14 +121,15 @@ public class PlanoCentro extends JFrame {
 				for(int i =0;i<encendido.size();i++) {
 					if(!encendido.get(i)) {
 						todosencendidos = false;
-						Botones.get(i).doClick();
+						Botones.get(i).setBackground(Color.green);
+						encendido.set(i, true);
 					}
 				}
 				if(todosencendidos) {
 					JOptionPane.showMessageDialog(null, "Ya estaban todas las alarmas encendidas");
 				}else {
 					JOptionPane.showMessageDialog(null, "Ya se han encendido todas las alarmas");
-				
+					Base_de_Datos.EncenderoApagarTodo("calefaccion",true);
 				}
 			}
 		});
@@ -307,12 +311,12 @@ public class PlanoCentro extends JFrame {
 	                if(encendido.get(indice)){
 	                	Botones.get(indice).setBackground(Color.red);
 	                	encendido.set(indice, false);
-	                	Base_de_Datos.CambioEstadoAlarma(indice,false);
+	                	Base_de_Datos.CambioEstado("calefaccion",indice,false);
 	                }
 	                else {
 	                	Botones.get(indice).setBackground(Color.green);	                
 	                	encendido.set(indice, true);
-	                	Base_de_Datos.CambioEstadoAlarma(indice,true);
+	                	Base_de_Datos.CambioEstado("calefaccion",indice,true);
 	             
 	                }
 				}

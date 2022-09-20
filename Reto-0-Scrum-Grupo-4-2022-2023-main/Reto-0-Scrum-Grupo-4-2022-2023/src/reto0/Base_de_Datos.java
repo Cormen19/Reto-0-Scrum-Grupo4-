@@ -214,14 +214,19 @@ public class Base_de_Datos {
 		return numero;
 	}
 
-	public static boolean CambioEstadoAlarma(int indice, boolean b) {
-		
+	public static boolean CambioEstado(String string ,int indice, boolean b) {
+		String query= null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(url,"root",Contra);
 		
 			Statement s = conn.createStatement();
-			String query=String.format("Update Alarma_de_incendios set Encendido = %b where Id_Alarma = '%d' ;",b,indice+1);
+			if(string.equals("alarma")) {
+				query=String.format("Update Alarma_de_incendios set Encendido = %b where Id_Alarma = '%d' ;",b,indice+1);
+			}else if(string.equals("calefaccion")) {
+				query=String.format("Update Calefaccion set Encendido = %b where Id_Calefaccion = '%d' ;",b,indice+1);
+			}
+			 
 			s.executeUpdate(query);
 			
 			s.close();
@@ -239,14 +244,20 @@ public class Base_de_Datos {
 		return false;
 	}
 	
-	public static boolean CambioEstadoCalefaccion(int indice, boolean b) {
-		
+
+	public static void EncenderoApagarTodo(String string,boolean b) {
+		String query = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(url,"root",Contra);
 		
 			Statement s = conn.createStatement();
-			String query=String.format("Update Calefaccion set Encendido = %b where Id_Calefaccion = '%d' ;",b,indice+1);
+			if(string.equals("alarma")) {
+				query =String.format("Update Alarma_de_Incendios set Encendido = %b ;",b);
+			}else if(string.equals("calefaccion")){
+				query =String.format("Update Calefaccion set Encendido = %b ;",b);
+			}
+		
 			s.executeUpdate(query);
 			
 			s.close();
@@ -254,14 +265,13 @@ public class Base_de_Datos {
 		
 		}catch(SQLException sql) {
 			System.out.println("Error al conectar a la base de datos ");
-			return false;
+	
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return false;
+		
 		}
 		
-		return false;
+		
 	}
-	
 }
