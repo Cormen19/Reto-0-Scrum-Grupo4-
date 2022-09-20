@@ -10,11 +10,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /*Ventana que sirve para conectar el login con los planos de alarma de incendios y calefaccion*/
-@SuppressWarnings("serial")
 public class MenuPlanoCentro extends JFrame {
 
 	private JPanel contentPane;
-	@SuppressWarnings("unused")
 	private static JLabel lblPlanoCentro;
 
 	/**

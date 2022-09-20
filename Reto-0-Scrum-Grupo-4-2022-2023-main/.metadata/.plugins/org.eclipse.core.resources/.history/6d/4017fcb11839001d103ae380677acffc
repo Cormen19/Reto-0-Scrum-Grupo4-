@@ -18,7 +18,6 @@ import java.awt.Color;
 
 import java.awt.Font;
 
-@SuppressWarnings("serial")
 public class PlanoCalefaccionCentro extends JFrame {
 	
 	public JPanel contentPane;

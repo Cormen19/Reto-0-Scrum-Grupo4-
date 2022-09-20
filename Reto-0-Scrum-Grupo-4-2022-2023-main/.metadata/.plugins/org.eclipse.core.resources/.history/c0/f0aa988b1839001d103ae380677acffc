@@ -21,7 +21,6 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 /*Esta clase es el inicio del programa , sirve para que el usuario se logue verificando que esta en la base de datos
  * O si no esta registrado para registrarse*/
-@SuppressWarnings("serial")
 public class Inicio extends JFrame {
 
 	private JPanel contentPane;
@@ -32,7 +31,6 @@ public class Inicio extends JFrame {
 	private JTextField txtEmail;
 	private JPasswordField passwordFieldContrasenya;
 	private JPasswordField passwordFieldRepetirContrasenya;
-	@SuppressWarnings("rawtypes")
 	private static JComboBox comboBoxRol;
 	public static ArrayList<AlarmadeIncendios> alarmadeIncendios = new ArrayList<AlarmadeIncendios>();
 	public static ArrayList<Calefaccion> calefaccion = new ArrayList<Calefaccion>();
@@ -50,7 +48,6 @@ public class Inicio extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Inicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -87,7 +84,6 @@ public class Inicio extends JFrame {
 		/*Atascado funcion login y pasar a los planos*/
 		JButton bntConfirmar = new JButton("Confirmar");
 		bntConfirmar.addMouseListener(new MouseAdapter() {
-				@SuppressWarnings("unused")
 				@Override
 				public void mouseClicked(MouseEvent e) {
 					
@@ -154,7 +150,7 @@ public class Inicio extends JFrame {
 		JLabel lblRol = new JLabel("Rol");
 		Registro.add(lblRol, "cell 1 6,alignx trailing");
 		
-		comboBoxRol = new JComboBox<>();
+		comboBoxRol = new JComboBox();
 		comboBoxRol.setModel(new DefaultComboBoxModel(Permisos.values()));
 		Registro.add(comboBoxRol, "cell 2 6,growx");
 		
@@ -172,7 +168,7 @@ public class Inicio extends JFrame {
 				String nombre = txtNombre.getText();
 				String apellidos = txtApellidos.getText();
 				
-				Permisos rol = (Permisos) comboBoxRol.getSelectedItem();
+				Permisos rol = (Permisos) comboBoxErregistroFuncion.getSelectedItem();
 				
 				if (!contrasenya.equals(repetirContrasenya)) {
 					JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales.");
@@ -200,7 +196,7 @@ public class Inicio extends JFrame {
 				passwordFieldRepetirContrasenya.setText("");
 				txtApellidos.setText("");
 				txtEmail.setText("");
-				comboBoxRol.setSelectedIndex(0);
+				comboBoxErregistroFuncion.setSelectedIndex(0);
 				
 }
 		});

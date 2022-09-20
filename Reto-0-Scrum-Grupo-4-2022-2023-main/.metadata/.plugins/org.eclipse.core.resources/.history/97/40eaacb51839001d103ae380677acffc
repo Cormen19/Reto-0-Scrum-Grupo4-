@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 public class MenuPlanoCentro extends JFrame {
 
 	private JPanel contentPane;
-	@SuppressWarnings("unused")
 	private static JLabel lblPlanoCentro;
 
 	/**

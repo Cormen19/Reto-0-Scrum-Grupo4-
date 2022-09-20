@@ -172,7 +172,7 @@ public class Inicio extends JFrame {
 				String nombre = txtNombre.getText();
 				String apellidos = txtApellidos.getText();
 				
-				Permisos rol = (Permisos) comboBoxRol.getSelectedItem();
+				
 				
 				if (!contrasenya.equals(repetirContrasenya)) {
 					JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales.");
@@ -200,7 +200,7 @@ public class Inicio extends JFrame {
 				passwordFieldRepetirContrasenya.setText("");
 				txtApellidos.setText("");
 				txtEmail.setText("");
-				comboBoxRol.setSelectedIndex(0);
+				comboBoxErregistroFuncion.setSelectedIndex(0);
 				
 }
 		});

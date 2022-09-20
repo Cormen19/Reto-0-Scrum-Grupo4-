@@ -200,7 +200,7 @@ public class Inicio extends JFrame {
 				passwordFieldRepetirContrasenya.setText("");
 				txtApellidos.setText("");
 				txtEmail.setText("");
-				comboBoxRol.setSelectedIndex(0);
+				comboBoxErregistroFuncion.setSelectedIndex(0);
 				
 }
 		});

@@ -11,7 +11,7 @@
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item key="pageIndex" value="2"/>
+		<item key="pageIndex" value="3"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>
@@ -66,8 +66,9 @@
 		<item key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION" value="C:\Users\georg\eclipse-workspace\Reto02023\Reto-0-Scrum-Grupo4-\Reto-0-Scrum-Grupo-4-2022-2023-main"/>
 		<item key="FatJarPackageWizardPage.LIBRARY_HANDLING" value="1"/>
 		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="Inicio - Reto-0-Scrum-Grupo-4-2022-2023"/>
-		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="E:\Reto0Grupo4-Scrum-2023.jar"/>
+		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="C:\Users\georg\OneDrive\Escritorio\Reto0Grupo4-Scrum-2023.jar"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\georg\OneDrive\Escritorio\Reto0Grupo4-Scrum-2023.jar"/>
 			<item value="E:\Reto0Grupo4-Scrum-2023.jar"/>
 		</list>
 		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
