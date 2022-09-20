@@ -1,12 +1,5 @@
 package reto0;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
-
 
 public class Usuario {
 
@@ -17,10 +10,10 @@ public class Usuario {
 	private String apellido;
 	
 	public enum Permisos {
-		/** Empleado */
 		Profesor,
-		/**Administrador */
-		ADMINISTRADOR
+		Alumno,
+		Bedel,
+		Seguridad
 	}
 	private Permisos rol ;
 	

@@ -29,7 +29,8 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
-
+/*Esta clase es el inicio del programa , sirve para que el usuario se logue verificando que esta en la base de datos
+ * O si no esta registrado para registrarse*/
 public class Inicio extends JFrame {
 
 	private JPanel contentPane;

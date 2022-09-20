@@ -1,5 +1,5 @@
 package reto0;
-
+/*Esta clase sirve para darle logica al programa como estamos empezando aun no se utiliza */
 public class Aula {
 
 
