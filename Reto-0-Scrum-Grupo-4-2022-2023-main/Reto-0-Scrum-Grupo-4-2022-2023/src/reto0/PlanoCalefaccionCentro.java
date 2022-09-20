@@ -18,7 +18,7 @@ import java.awt.Color;
 
 import java.awt.Font;
 
-public class PlanoCentro extends JFrame {
+public class PlanoCalefaccionCentro extends JFrame {
 	
 	public JPanel contentPane;
 	public static JButton Boton1;
@@ -51,7 +51,7 @@ public class PlanoCentro extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		PlanoCentro frame = new PlanoCentro();
+		PlanoCalefaccionCentro frame = new PlanoCalefaccionCentro();
 		frame.setVisible(true);
 	
 	}
@@ -59,7 +59,7 @@ public class PlanoCentro extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public PlanoCentro() {
+	public PlanoCalefaccionCentro() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 810, 841);
 		contentPane = new JPanel();

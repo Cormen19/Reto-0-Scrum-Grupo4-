@@ -58,7 +58,7 @@ public class MenuPlanoCentro extends JFrame {
 		JButton btnCalefacion = new JButton("Calefacción");
 		btnCalefacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PlanoCentro.main(null);
+				PlanoCalefaccionCentro.main(null);
 				dispose();
 			}
 		});
