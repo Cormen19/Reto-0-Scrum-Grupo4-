@@ -22,7 +22,8 @@ public class MenuPlanoCentro extends JFrame {
 	public static void main(String[] args) {
 		MenuPlanoCentro frame = new MenuPlanoCentro();
 		frame.setVisible(true);
-			
+		Inicio.alarmadeIncendios = Base_de_Datos.cargarAlarmasdeIncendios();
+		Inicio.calefaccion = Base_de_Datos.cargarCalefacion();
 	}
 
 	/**
@@ -30,7 +31,9 @@ public class MenuPlanoCentro extends JFrame {
 	 */
 	public MenuPlanoCentro() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 810, 773);
+		setBounds(100, 100, 352, 296);
+		setLocationRelativeTo ( null );
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
@@ -39,7 +42,7 @@ public class MenuPlanoCentro extends JFrame {
 		
 		JLabel lblTitulo = new JLabel("Menu Principal");
 		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		lblTitulo.setBounds(401, 24, 290, 44);
+		lblTitulo.setBounds(70, 25, 219, 44);
 		contentPane.add(lblTitulo);
 		
 		JButton btnAlarmaDeIncendios = new JButton("Alarma de Incendios");
@@ -49,7 +52,7 @@ public class MenuPlanoCentro extends JFrame {
 				dispose();
 			}
 		});
-		btnAlarmaDeIncendios.setBounds(424, 140, 152, 34);
+		btnAlarmaDeIncendios.setBounds(88, 158, 152, 34);
 		contentPane.add(btnAlarmaDeIncendios);
 		
 		JButton btnCalefacion = new JButton("Calefacción");
@@ -59,15 +62,8 @@ public class MenuPlanoCentro extends JFrame {
 				dispose();
 			}
 		});
-		btnCalefacion.setBounds(424, 79, 152, 34);
+		btnCalefacion.setBounds(88, 97, 152, 34);
 		contentPane.add(btnCalefacion);
-		
-	
-		
-		lblPlanoCentro = new JLabel();
-		lblPlanoCentro.setIcon(new ImageIcon("src\\reto0\\Imagenes\\PlanoCentro.png"));
-		lblPlanoCentro.setBounds(0, 0, 753, 734);
-		contentPane.add(lblPlanoCentro);
 	
 	}
 }

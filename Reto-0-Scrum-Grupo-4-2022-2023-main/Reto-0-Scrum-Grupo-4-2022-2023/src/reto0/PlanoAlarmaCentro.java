@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class PlanoAlarmaCentro extends JFrame {
@@ -37,9 +39,22 @@ public class PlanoAlarmaCentro extends JFrame {
 		setBounds(100, 100, 763, 754);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		setLocationRelativeTo ( null );
+		setResizable(false);
+		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton btnAtás = new JButton("Menu Principal");
+		btnAtás.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MenuPlanoCentro.main(null);
+				dispose();
+			}
+		});
+		btnAtás.setBounds(502, 70, 152, 40);
+		contentPane.add(btnAtás);
 		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
