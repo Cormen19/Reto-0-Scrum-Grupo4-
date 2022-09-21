@@ -9,6 +9,8 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Font;
@@ -55,9 +57,8 @@ public class PlanoAlarmaCentro extends JFrame {
 		});
 		
 		JButton btnApagar = new JButton("Apagar Todo");
-		btnApagar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		btnApagar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				boolean todosapagados= true;
 				for(int i =0;i<Inicio.alarmadeIncendios.size();i++) {
 					if(Inicio.alarmadeIncendios.get(i).getEncendido()) {
@@ -83,9 +84,8 @@ public class PlanoAlarmaCentro extends JFrame {
 		contentPane.add(btnApagar);
 		
 		JButton btnEncenderTodo = new JButton("Encender Todo");
-		btnEncenderTodo.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		btnEncenderTodo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				boolean todosencendidos= true;
 				for(int i =0;i<Inicio.alarmadeIncendios.size();i++) {
 					if(!Inicio.alarmadeIncendios.get(i).getEncendido()) {
@@ -282,12 +282,9 @@ public class PlanoAlarmaCentro extends JFrame {
 			}else {
 				Botones.get(i).setBackground(Color.red);
 			}
-			Botones.get(i).addMouseListener(new MouseAdapter() {
-				
-				
-				public void mouseClicked(MouseEvent e) {
-					
-					
+			Botones.get(i).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+									
 	                if(Inicio.alarmadeIncendios.get(indice).getEncendido()){
 	                	Botones.get(indice).setBackground(Color.red);
 	                	Inicio.alarmadeIncendios.get(indice).setEncendido(false);  

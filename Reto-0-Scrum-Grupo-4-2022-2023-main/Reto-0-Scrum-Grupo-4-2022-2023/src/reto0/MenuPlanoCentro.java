@@ -32,7 +32,7 @@ public class MenuPlanoCentro extends JFrame {
 	 */
 	public MenuPlanoCentro() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 352, 296);
+		setBounds(100, 100, 352, 360);
 		setLocationRelativeTo ( null );
 		setResizable(false);
 		contentPane = new JPanel();
@@ -65,6 +65,16 @@ public class MenuPlanoCentro extends JFrame {
 		});
 		btnCalefacion.setBounds(88, 97, 152, 34);
 		contentPane.add(btnCalefacion);
+		
+		JButton btnCerrarSesion = new JButton("Cerrar Sesion");
+		btnCerrarSesion.setBounds(88, 221, 152, 34);
+		btnCerrarSesion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Inicio.main(null);
+				dispose();
+			}
+		});
+		contentPane.add(btnCerrarSesion);
 	
 	}
 }

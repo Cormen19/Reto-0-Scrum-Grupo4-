@@ -88,9 +88,8 @@ public class PlanoCalefaccionCentro extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnApagar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		btnApagar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				boolean todosapagados= true;
 				for(int i =0;i<Inicio.calefaccion.size();i++) {
 					if(Inicio.calefaccion.get(i).isEncendido()) {
@@ -115,9 +114,8 @@ public class PlanoCalefaccionCentro extends JFrame {
 
 		
 		JButton btnEncenderTodo = new JButton("Encender Todo");
-		btnEncenderTodo.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		btnEncenderTodo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				boolean todosencendidos= true;
 				for(int i =0;i<Inicio.calefaccion.size();i++) {
 					if(!Inicio.calefaccion.get(i).isEncendido()) {
@@ -302,9 +300,8 @@ public class PlanoCalefaccionCentro extends JFrame {
 			}else {
 				Botones.get(i).setBackground(Color.red);
 			}
-			Botones.get(i).addMouseListener(new MouseAdapter() {
-				@Override
-				public void mouseClicked(MouseEvent e) {
+			Botones.get(i).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
 				
 	                if(Inicio.calefaccion.get(indice).isEncendido()){
 	                	Botones.get(indice).setBackground(Color.red);
