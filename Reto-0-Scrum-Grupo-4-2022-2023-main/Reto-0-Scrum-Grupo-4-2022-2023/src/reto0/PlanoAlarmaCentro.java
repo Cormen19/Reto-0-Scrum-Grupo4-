@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import java.util.ArrayList;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Font;
 
 
 @SuppressWarnings("serial")
@@ -58,11 +59,11 @@ public class PlanoAlarmaCentro extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				boolean todosapagados= true;
-				for(int i =0;i<Inicio.calefaccion.size();i++) {
-					if(Inicio.calefaccion.get(i).isEncendido()) {
+				for(int i =0;i<Inicio.alarmadeIncendios.size();i++) {
+					if(Inicio.alarmadeIncendios.get(i).getEncendido()) {
 						todosapagados = false;
 						Botones.get(i).setBackground(Color.red);
-						Inicio.calefaccion.get(i).setEncendido(false);
+						Inicio.alarmadeIncendios.get(i).setEncendido(false);
 					}
 				}
 				if(!todosapagados) {
@@ -73,6 +74,11 @@ public class PlanoAlarmaCentro extends JFrame {
 				}
 			}
 		});
+		
+		JLabel lblTitulo = new JLabel("Plano de Alarmas Centro");
+		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		lblTitulo.setBounds(207, 38, 329, 30);
+		contentPane.add(lblTitulo);
 		btnApagar.setBounds(502, 140, 152, 40);
 		contentPane.add(btnApagar);
 		
@@ -81,11 +87,11 @@ public class PlanoAlarmaCentro extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				boolean todosencendidos= true;
-				for(int i =0;i<Inicio.calefaccion.size();i++) {
-					if(!Inicio.calefaccion.get(i).isEncendido()) {
+				for(int i =0;i<Inicio.alarmadeIncendios.size();i++) {
+					if(!Inicio.alarmadeIncendios.get(i).getEncendido()) {
 						todosencendidos = false;
 						Botones.get(i).setBackground(Color.green);
-						Inicio.calefaccion.get(i).setEncendido(true);
+						Inicio.alarmadeIncendios.get(i).setEncendido(true);
 					}
 				}
 				if(todosencendidos) {
