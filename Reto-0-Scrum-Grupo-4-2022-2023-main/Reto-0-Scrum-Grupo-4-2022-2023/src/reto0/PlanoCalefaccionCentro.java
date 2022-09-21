@@ -261,7 +261,7 @@ public class PlanoCalefaccionCentro extends JFrame {
 			
 		//Usamos una etiqueta y en ella ponemos la imagen del plano del centro
 		PlanoCentro = new JLabel("");
-		PlanoCentro.setIcon(new ImageIcon("src\\reto0\\Imagenes\\PlanoCentro.png"));
+		PlanoCentro.setIcon(new ImageIcon(PlanoAlarmaCentro.class.getResource("/reto0/Imagenes/PlanoCentro.png")));
 		PlanoCentro.setBounds(0, 57, 753, 734);
 		contentPane.add(PlanoCentro);
 		
