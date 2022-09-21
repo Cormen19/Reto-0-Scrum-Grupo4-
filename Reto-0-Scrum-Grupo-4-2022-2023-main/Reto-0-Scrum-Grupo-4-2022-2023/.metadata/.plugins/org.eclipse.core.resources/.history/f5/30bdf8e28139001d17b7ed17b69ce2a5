@@ -22,9 +22,9 @@ import java.awt.Font;
 public class PlanoCalefaccionCentro extends JFrame {
 	
 	public JPanel contentPane;
-	public static JLabel PlanoCentro;
 	public static JButton Boton1;
 	public static JButton Boton2;
+	public static JLabel PlanoCentro;
 	public static JButton Boton3;
 	private static JButton Boton4;
 	private static JButton Boton5;
@@ -71,9 +71,9 @@ public class PlanoCalefaccionCentro extends JFrame {
 		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		JButton btnAtras = new JButton("Menu Principal");
+		JButton btnAtás = new JButton("Menu Principal");
 		
-		btnAtras.addMouseListener(new MouseAdapter() {
+		btnAtás.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				MenuPlanoCentro.main(null);
