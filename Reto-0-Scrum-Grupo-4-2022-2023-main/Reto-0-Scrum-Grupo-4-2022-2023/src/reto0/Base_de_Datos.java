@@ -21,7 +21,7 @@ public class Base_de_Datos {
 		 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(url,"root",Contra);
+			Connection conn = DriverManager.getConnection(url,"admindam",Contra);
 		
 			Statement s = conn.createStatement();
 			ResultSet rs = s.executeQuery("Select * "
@@ -52,7 +52,7 @@ public class Base_de_Datos {
 		 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(url,"root",Contra);
+			Connection conn = DriverManager.getConnection(url,"admindam",Contra);
 		
 			Statement s = conn.createStatement();
 			ResultSet rs = s.executeQuery("Select * "
@@ -83,7 +83,7 @@ public class Base_de_Datos {
 		
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection conn = DriverManager.getConnection(url,"root",Contra);
+				Connection conn = DriverManager.getConnection(url,"admindam",Contra);
 			
 				Statement s = conn.createStatement();
 			
@@ -110,7 +110,7 @@ public class Base_de_Datos {
 	public static boolean usuarioValido(String nombre, String contrasenya) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(url,"root",Contra);
+			Connection conn = DriverManager.getConnection(url,"admindam",Contra);
 		
 			Statement s = conn.createStatement();
 			String query=String.format("Select nombre,contrasena from usuario where nombre= '%s' and contrasena = '%s' ;",nombre,contrasenya);
@@ -142,7 +142,7 @@ public class Base_de_Datos {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(url,"root",Contra);
+			Connection conn = DriverManager.getConnection(url,"admindam",Contra);
 		
 			Statement s = conn.createStatement();
 			String query=String.format("Select nombre,contrasena from usuario where nombre= '%s' and apellido = '%s' ;",nombre,apellido);
@@ -175,7 +175,7 @@ public class Base_de_Datos {
 		int numero=0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(url,"root",Contra);
+			Connection conn = DriverManager.getConnection(url,"admindam",Contra);
 			Statement s = conn.createStatement();
 			String query = ("Select max(Id_Usuario) "
 							+ "From usuario ;");
@@ -203,7 +203,7 @@ public class Base_de_Datos {
 	
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(url,"root",Contra);
+			Connection conn = DriverManager.getConnection(url,"admindam",Contra);
 		
 			Statement s = conn.createStatement();	 
 			s.executeUpdate(query);

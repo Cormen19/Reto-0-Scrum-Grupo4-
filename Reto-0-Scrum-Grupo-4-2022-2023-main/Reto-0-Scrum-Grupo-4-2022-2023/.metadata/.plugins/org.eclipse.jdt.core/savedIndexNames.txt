@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+E:\Reto0Grupo4\Reto-0-Scrum-Grupo4-\Reto-0-Scrum-Grupo-4-2022-2023-main\Reto-0-Scrum-Grupo-4-2022-2023\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-1067094681.index
-3028206882.index
