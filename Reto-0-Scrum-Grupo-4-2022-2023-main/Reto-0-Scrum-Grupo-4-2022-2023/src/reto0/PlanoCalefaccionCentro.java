@@ -22,9 +22,9 @@ import java.awt.Font;
 public class PlanoCalefaccionCentro extends JFrame {
 	
 	public JPanel contentPane;
+	public static JLabel PlanoCentro;
 	public static JButton Boton1;
 	public static JButton Boton2;
-	public static JLabel PlanoCentro;
 	public static JButton Boton3;
 	private static JButton Boton4;
 	private static JButton Boton5;
