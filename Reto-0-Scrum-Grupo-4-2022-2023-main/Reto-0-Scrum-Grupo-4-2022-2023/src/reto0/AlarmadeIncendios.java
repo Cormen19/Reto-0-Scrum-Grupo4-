@@ -1,8 +1,9 @@
 package reto0;
 
-public class AlarmadeIncendios {
+public class AlarmadeIncendios{
 	private int idCal;
 	private boolean encendido;
+	
 	public AlarmadeIncendios(int idCal,boolean encendido) {
 	    this.encendido=encendido;
 		this.idCal= idCal;

@@ -13,7 +13,7 @@ import java.util.Scanner;
  * modificaciones de el estado de las alarmas y calefaciones*/
 public class Base_de_Datos {
 	static Scanner teclado = new Scanner(System.in);
-	final static String url = "jdbc:mysql://localhost:33060/reto0-scrum-grupo4";
+	final static String url = "jdbc:mysql://localhost:3306/reto0-scrum-grupo4";
 	final static String Contra= "elorrieta";
 	/*Recoge los datos de las calefacciones y las carga en memoria en un arraylist*/
 	public static ArrayList<Calefaccion> cargarCalefacion(){
