@@ -47,8 +47,8 @@ public class PlanoAlarmaCentro extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnAtás = new JButton("Menu Principal");
-		btnAtás.addMouseListener(new MouseAdapter() {
+		JButton btnAtras = new JButton("Menu Principal");
+		btnAtras.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				MenuPlanoCentro.main(null);
@@ -107,8 +107,8 @@ public class PlanoAlarmaCentro extends JFrame {
 		});
 		btnEncenderTodo.setBounds(502, 206, 152, 40);
 		contentPane.add(btnEncenderTodo);
-		btnAtás.setBounds(502, 70, 152, 40);
-		contentPane.add(btnAtás);
+		btnAtras.setBounds(502, 70, 152, 40);
+		contentPane.add(btnAtras);
 		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
